@@ -22,8 +22,9 @@ main {
 }
 
 .form-input {
-    width: 200px;
+    width: 170px;
     margin: 10px 10px;
+    padding-left: 20px;
     border: none;
     border-radius: 10px;
     height: 30px;
