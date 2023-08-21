@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { OptionsComponent } from './options/options.component';
 import { OrdersRoutingModule } from './orders-routing.module';
-
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { OrdersRoutingModule } from './orders-routing.module';
   ],
   imports: [
     CommonModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
+    MatIconModule
   ],
   exports: [
     OrdersComponent
