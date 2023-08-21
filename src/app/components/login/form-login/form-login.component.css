@@ -43,6 +43,10 @@ main {
     margin-top: 2px;
 }
 
+#error-message {
+    color: red
+}
+
 @media (min-width: 480px){
     .vintage-burger-logo{
         width: 400px;

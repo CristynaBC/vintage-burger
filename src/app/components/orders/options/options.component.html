@@ -5,12 +5,16 @@
     </head>
     <body>
         <main>
-            <h2 class="home-welcome">Bem vindo(a) Nome do Atendente</h2>
-            <div class="home-options">NOVO PEDIDO 
-                <mat-icon class="icons">add</mat-icon>
-            </div>
-            <div class="home-options">PEDIDOS PRONTOS</div>
-            <div class="home-options">PEDIDOS EM ANDAMENTO</div>
+            <h2 class="home-welcome">Bem vindo(a) {{ role }} </h2>
+            <button class="home-options">NOVO PEDIDO 
+                <mat-icon class="icons">note_add</mat-icon>
+            </button>
+            <button class="home-options">PEDIDOS PRONTOS
+                <mat-icon class="icons">check_circle</mat-icon>
+            </button>
+            <button class="home-options">PEDIDOS EM ANDAMENTO
+                <mat-icon class="icons">watch_later</mat-icon>
+            </button>
           </main>
     </body>
 </html>

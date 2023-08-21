@@ -4,18 +4,19 @@
     alt="Vintage Burger Logo"
     class="vintage-burger-logo"
   />
-  <form class="login-form">
+  <form (ngSubmit)="onSubmit()" class="login-form">
     <label for="email"></label>
     <input
       type="email"
-      name="email-input"
+      [(ngModel)]="email"
+      name="email"
       class="form-input"
       id="email-adress"
       placeholder="email@exemplo.com"
     />
     <label for="password"></label>
-    <input type="password" name="password-input" id="password-input" class="form-input" placeholder="senha" />
-    <p id="error-message"></p>
+    <input type="password" [(ngModel)]="password" name="password" id="password-input" class="form-input" placeholder="senha" />
+    <p id="error-message" *ngIf="loginError">{{ errorMessage }}</p>
     <button type="submit" id="login-btn">Entrar</button>
   </form>
 </main>

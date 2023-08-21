@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AuthService {
-  private apiUrl = "https://localhost:8080/login" //aqui define a url da api
+  private apiUrl = "http://localhost:8080/login" //aqui define a url da api
   constructor(private http: HttpClient) { }       //esse constructor recebe uma injeção de dependência do serviço HttpClient do angular, que permite fazer http requests
 
   login(email: string, password: string): Observable<any> {  //primeiro método do serviço: login, faz uma solicitação de login para a API, passando os valores de email e password, para utilizar tem que chamar AuthService.login
@@ -26,6 +26,18 @@ export class AuthService {
   isLoggedIn(): boolean {                      //quarto método, retorna um valor booleano para dizer se está logado ou não
     return !!this.getToken();
   }
+
+  saveRole(role: string): void {
+    localStorage.setItem('role', role)
+  }
+  getRole(): string | null {
+    return localStorage.getItem('role')
+  }
+
+  //implementar logout
+
+  
+  
 }
 
 
