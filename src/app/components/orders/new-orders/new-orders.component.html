@@ -1,0 +1,16 @@
+<h2>Novo Pedido</h2>
+
+<!-- Opções de tipos -->
+<div class="type-options">
+  <button (click)="onSelectType('cafés')">Cafés</button>
+  <button (click)="onSelectType('lanches')">Lanches</button>
+  <button (click)="onSelectType('almoços')">Almoços</button>
+  <button (click)="onSelectType('bebidas')">Bebidas</button>
+</div>
+
+<!-- Lista de produtos -->
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - R$ {{ product.price }}
+  </li>
+</ul>
