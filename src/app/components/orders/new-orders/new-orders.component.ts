@@ -9,6 +9,7 @@ import { OrderService } from 'src/app/services/order.service';
 export class NewOrdersComponent implements OnInit {
   products: any[] = []; //array que armazenará a lista de produtos obtidos do serviço
   selectedType: string | null = null;
+  cartItems: any[] = [];
 
   constructor(private orderService: OrderService) { }
 
@@ -20,7 +21,7 @@ export class NewOrdersComponent implements OnInit {
     this.orderService.getProductsByType(type)
       .subscribe(
         (data:any) => {
-          console.log(data)
+          // console.log(data)
           // Filtra apenas os produtos do tipo selecionado:
            this.products = data.filter((product: any) => product.type === type);
           
@@ -34,5 +35,9 @@ export class NewOrdersComponent implements OnInit {
   onSelectType(type: string): void {
     this.selectedType = type;
     this.getProductsByType(type);
+  }
+
+  addToCart(product: any): void {
+    this.cartItems.push(product);
   }
 }

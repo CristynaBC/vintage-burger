@@ -1,0 +1,10 @@
+<div class="cart-container">
+  <h2>Resumo do Pedido</h2>
+  <div *ngFor="let item of cartItems; let i = index">
+    {{ item.name }} - {{ item.price }}
+    <button (click)="removeItem(i)">Remover</button>
+  </div>
+  <p>Total: {{ calculateTotal() | currency }}</p>
+</div>
+
+  
