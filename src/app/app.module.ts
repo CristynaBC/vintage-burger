@@ -8,6 +8,8 @@ import { FooterComponent } from './components/commons/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { OrderService } from './services/order.service';
 
 
 @NgModule({
@@ -23,7 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    OrderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
