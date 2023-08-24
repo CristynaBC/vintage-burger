@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 
 import { OptionsRoutingModule } from './options-routing.module';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonsModule } from '../commons/commons.module';
+
+
 
 
 @NgModule({
@@ -13,7 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     OptionsRoutingModule,
-    MatIconModule
+    MatIconModule,
+    CommonsModule
+  
   ],
   exports: [
     OptionsComponent
