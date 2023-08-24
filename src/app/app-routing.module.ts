@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginModule } from './components/login/login.module';
 import { OrdersModule } from './components/orders/orders.module';
-import { OptionsComponent } from './components/options/options.component';
+import { OptionsModule } from './components/options/options.module';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: OptionsComponent
+    loadChildren: () => import('./components/options/options.module').then( m => OptionsModule)
   },
   {
     path: 'new-orders',
