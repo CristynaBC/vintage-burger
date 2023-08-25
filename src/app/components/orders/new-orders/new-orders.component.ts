@@ -10,11 +10,11 @@ export class NewOrdersComponent implements OnInit {
   products: any[] = []; //array que armazenará a lista de produtos obtidos do serviço
   selectedType: string | null = null;
   cartItems: any[] = [];
-
+  selectedButtonType: string | null = null;
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-    // Lógica de inicialização do componente
+
   }
 
   getProductsByType(type: string): void {
@@ -32,10 +32,16 @@ export class NewOrdersComponent implements OnInit {
       );
   }
 
+  
+
   onSelectType(type: string): void {
     this.selectedType = type;
+    this.selectedButtonType = type;
     this.getProductsByType(type);
   }
+   // Atualiza o botão selecionado
+  
+    
 
   addToCart(product: any): void {
     this.cartItems.push(product);
