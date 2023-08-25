@@ -1,0 +1,24 @@
+/* Estilo base para todos os botões */
+.product-button {
+    background-color: #FFD700;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin:2%
+  }
+  
+  /* Estilo para o botão selecionado */
+  .selected-button {
+    background-color: #C7A800; 
+    color: #fff;
+    border: none;
+    margin:2%
+  }
+  
+
+.product-image {
+    width: 10%;
+    height: 15%;
+    border-radius: 10%;
+  }
+  

@@ -2,15 +2,19 @@
 
 <!-- Opções de tipos -->
 <div class="type-options">
-  <button (click)="onSelectType('cafés')">Cafés</button>
-  <button (click)="onSelectType('lanches')">Lanches</button>
-  <button (click)="onSelectType('almoços')">Almoços</button>
-  <button (click)="onSelectType('bebidas')">Bebidas</button>
+  <button (click)="onSelectType('cafés')" class="product-button" [ngClass]="{ 'selected-button': selectedButtonType === 'cafés' }">Cafés</button>
+  <button (click)="onSelectType('lanches')" class="product-button" [ngClass]="{ 'selected-button': selectedButtonType === 'lanches' }">Lanches</button>
+  <button (click)="onSelectType('almoços')" class="product-button" [ngClass]="{ 'selected-button': selectedButtonType === 'almoços' }">Almoços</button>
+  <button (click)="onSelectType('bebidas')" class="product-button" [ngClass]="{ 'selected-button': selectedButtonType === 'bebidas' }">Bebidas</button>
 </div>
 
+
 <!-- Lista de produtos -->
-<ul>
-  <li *ngFor="let product of products">
-    {{ product.name }} - R$ {{ product.price }}
-  </li>
-</ul>
+<div *ngFor="let product of products">
+  <div class="product-card">
+    <img [src]="product.image" alt="Product Image" class="product-image">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.price }}</p>
+    <button (click)="addToCart(product)">Adicionar ao Carrinho</button>
+  </div>
+</div>
