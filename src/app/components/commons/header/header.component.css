@@ -10,16 +10,48 @@ header {
 .header-logo {
   height: 70px;
   width: auto;
-}
-.icon-container {
-  width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 50px;
+  
 }
 
+.icon-container {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 30px 10px 10px;
+
+}
+
+
 .header-icon {
+  font-size: 2.2rem;
   color: white;
-  font-size: 2rem;
+  transition: transform 0.2s;
+}
+
+
+.header-icon-label {
+  visibility: hidden;
+  text-align: center;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+  margin-top: 5px;
+  height: 20px;
+  
+}
+
+.icon-label:hover .header-icon-label {
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.icon-label:hover .header-icon {
+  transform: scale(1.4);
+}
+
+.icon-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
