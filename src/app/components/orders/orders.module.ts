@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { NewOrdersComponent } from './new-orders/new-orders.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { CommonsModule } from '../commons/commons.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
   imports: [
     CommonModule,
     OrdersRoutingModule,
+    CommonsModule
   ],
   exports: [
     OrdersComponent
