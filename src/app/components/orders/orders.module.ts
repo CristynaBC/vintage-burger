@@ -6,6 +6,7 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { NewOrdersComponent } from './new-orders/new-orders.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { CommonsModule } from '../commons/commons.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CommonsModule } from '../commons/commons.module';
   imports: [
     CommonModule,
     OrdersRoutingModule,
-    CommonsModule
+    CommonsModule,
+    MatIconModule,
   ],
   exports: [
     OrdersComponent

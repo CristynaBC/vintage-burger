@@ -1,0 +1,46 @@
+.app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .new-orders-container,
+  .order-summary-container {
+    flex: 1;
+    height: 100vh; /* Define a altura para ocupar 100% da altura da viewport */
+    overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura da seção */
+  }
+
+  /* Estilização da barra de rolagem */
+.new-orders-container::-webkit-scrollbar,
+.order-summary-container::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.new-orders-container::-webkit-scrollbar-thumb,
+.order-summary-container::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Cor do fundo da barra de rolagem */
+  border-radius: 4px; /* Arredondamento da parte que você arrasta */
+}
+
+.new-orders-container::-webkit-scrollbar-thumb:hover,
+.order-summary-container::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa; /* Cor do fundo da barra de rolagem ao passar o mouse */
+}
+  
+  .order-summary-container {
+    background-color: #FFA696;
+    margin-right: 0%;
+  }
+  
+  .new-orders-container{
+    background-color: #1F9FA7;
+  }
+
+  

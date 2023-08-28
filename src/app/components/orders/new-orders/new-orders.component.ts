@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/services/order.service';
+import { MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-new-orders',
