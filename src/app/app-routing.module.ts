@@ -10,11 +10,11 @@ const routes: Routes = [
     loadChildren: () => import('./components/login/login.module').then( m => LoginModule)
   },
   {
-    path: 'dashboard',
+    path: 'home',
     loadChildren: () => import('./components/options/options.module').then( m => OptionsModule)
   },
   {
-    path: 'new-orders',
+    path: 'pedidos',
     loadChildren: () => import('./components/orders/orders.module').then( m => OrdersModule)
   }
 ];
