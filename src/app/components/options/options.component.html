@@ -7,15 +7,18 @@
     <app-header></app-header>
         <main>
             <h2 class="home-welcome">Bem vindo(a) {{ role }} </h2>
-            <button class="home-options">NOVO PEDIDO 
+            <div class="home-options" routerLink="/pedidos">
+                <h3>NOVO PEDIDO</h3> 
                 <mat-icon class="icons">note_add</mat-icon>
-            </button>
-            <button class="home-options">PEDIDOS PRONTOS
+            </div>
+            <div class="home-options">
+                <h3>PEDIDOS PRONTOS</h3>
                 <mat-icon class="icons">check_circle</mat-icon>
-            </button>
-            <button class="home-options">PEDIDOS EM ANDAMENTO
+            </div>
+            <div class="home-options">
+                <h3>PEDIDOS EM ANDAMENTO</h3>
                 <mat-icon class="icons">watch_later</mat-icon>
-            </button>
+            </div>
           </main>
     </body>
 </html>
