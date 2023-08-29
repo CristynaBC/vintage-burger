@@ -1,3 +1,7 @@
+h2{
+  color: #fff;
+  text-align: center;
+}
 /* Estilo base para todos os botões */
 .product-button {
     background-color: #FFD700;
@@ -33,17 +37,17 @@
   align-items: center;
 }
   
-  .product-card {
-    border: 1px solid #ccc; /* Borda sólida */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px; 
-    margin: 10px; 
-    background-color: #FFA696; 
-    border-radius: 8px;
-    flex: 1; /*Distribui o espaço horizontal igualmente*/
-    width: 100px;
-    height: 200px;
-  }
+.product-card {
+  border: 1px solid #ccc; /* Borda sólida */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px; 
+  margin: 10px; 
+  background-color: #FFA696; 
+  border-radius: 8px;
+  flex: 1; /*Distribui o espaço horizontal igualmente*/
+  width: 150px;
+  height: 220px;
+}
 
   .product-card-container {
   display: grid;
@@ -70,6 +74,7 @@
   justify-content: center;
   align-items: center;
   }
+
 
   @media (min-width: 1054px) {
     .cards-container {
