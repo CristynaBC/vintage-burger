@@ -10,7 +10,7 @@ header {
 .header-logo {
   height: 70px;
   width: auto;
-  
+  margin-left: 20px;
 }
 
 .icon-container {
@@ -44,10 +44,12 @@ header {
 .icon-label:hover .header-icon-label {
   visibility: visible;
   opacity: 0.7;
+  cursor: pointer;
 }
 
 .icon-label:hover .header-icon {
   transform: scale(1.4);
+  cursor: pointer;
 }
 
 .icon-label {

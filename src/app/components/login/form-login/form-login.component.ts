@@ -25,7 +25,7 @@ export class FormLoginComponent {
         console.log(role)
         this.authService.saveToken(token)  //chama o método saveToken do auth service
         
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/home'])
       },
       (error) => {
         console.error('Erro no login', error)
