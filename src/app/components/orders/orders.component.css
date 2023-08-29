@@ -31,6 +31,7 @@
 .order-summary-container {
     background-color: #FFA696;
     margin-right: 0%;
+    max-width: 30%;
 }
 
 .new-orders-container {
