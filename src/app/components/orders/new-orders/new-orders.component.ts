@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/services/order.service';
-import { MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-new-orders',
@@ -34,15 +33,13 @@ export class NewOrdersComponent implements OnInit {
   }
 
   
-
+// Atualiza o botão selecionado
   onSelectType(type: string): void {
     this.selectedType = type;
     this.selectedButtonType = type;
     this.getProductsByType(type);
   }
-   // Atualiza o botão selecionado
-  
-    
+   
 
   addToCart(product: any): void {
     this.cartItems.push(product);
