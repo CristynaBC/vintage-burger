@@ -10,10 +10,10 @@
 
 <!-- Lista de produtos -->
 <div class="cards-container">
-<div *ngFor="let product of products">
-  <div class="product-card">
-    <img [src]="product.image" alt="Product Image" class="product-image">
-    <button class="product-btn" (click)="addToCart(product)">{{ product.name }} R$ {{ product.price }}</button>
-  </div>
-</div>
+  <div *ngFor="let product of products">
+    <div class="product-card">
+      <img [src]="product.image" alt="Product Image" class="product-image">
+      <button class="product-btn" (click)="addToCart(product)">{{ product.name }} R$ {{ product.price }}</button>
+    </div>
+  </div>  
 </div>

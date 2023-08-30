@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-order-summary',
@@ -8,11 +9,22 @@ import { Component, Input } from '@angular/core';
 export class OrderSummaryComponent {
   @Input() cartItems: any[] = [];
 
+  constructor(public cartService: CartService) { }
+
   calculateTotal(): number {
-    return this.cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    return this.cartService.calculateTotal();
+  }
+
+  increaseQuantity(index: number): void { 
+    this.cartService.increaseQuantity(index);
+  }
+
+  decreaseQuantity(index: number): void {
+    this.cartService.decreaseQuantity(index);
   }
 
   removeItem(index: number): void {
-    this.cartItems.splice(index, 1);
+    this.cartService.removeItem(index);
   }
 }
+
