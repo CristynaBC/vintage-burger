@@ -13,11 +13,7 @@
 <div *ngFor="let product of products">
   <div class="product-card">
     <img [src]="product.image" alt="Product Image" class="product-image">
-    <h3 class="product-name">{{ product.name }}</h3>
-    <p>{{ product.price }} </p>
-    <button class="cart-button">
-      <mat-icon class="icons">add</mat-icon>
-    </button>
+    <button class="product-btn" (click)="addToCart(product)">{{ product.name }} R$ {{ product.price }}</button>
   </div>
 </div>
 </div>
