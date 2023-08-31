@@ -1,6 +1,7 @@
 h2{
   color: #fff;
   text-align: center;
+  font-weight: bold
 }
 
 .type-options {
@@ -17,6 +18,7 @@ h2{
     width: 60px;
     height: 40px;
     border-radius: 10%;
+    font-weight: bold
   }
   
   /* Estilo para o botão selecionado */
