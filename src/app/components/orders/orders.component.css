@@ -31,12 +31,17 @@
 .order-summary-container {
     background-color: #FFA696;
     margin-right: 0%;
-    max-width: 30%;
+    max-width: 40%;
 }
 
 .new-orders-container {
    background-color: #1F9FA7; 
 }
 
+@media (min-width: 1054px) {
+  .order-summary-container {
+    max-width: 30%;
+  }
+}
 
   
