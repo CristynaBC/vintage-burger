@@ -1,6 +1,42 @@
 h2{
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
-  }
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+}
+
+.summary-item {
+display: grid;
+}
+
+.order-description, .order-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: #fff;
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  margin: 2%;
+  background-color: #ff6347;
+  border-radius: 8px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  margin-top: 5%;
+  background-color: #ff6347;
+  padding: 5px; /* Espaçamento interno para os botões */
+  grid-column-start: 2;
+}
+
+.btn-container button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: #fff;
+  border: none;
+  margin: 5%;
+  align-self: center;
+  border-radius: 50%;
+}
