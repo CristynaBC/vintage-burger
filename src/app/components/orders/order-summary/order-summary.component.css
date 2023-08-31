@@ -23,10 +23,10 @@ display: grid;
 
 .btn-container {
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
+  justify-content: center;
   margin-top: 5%;
   background-color: #ff6347;
-  padding: 5px; /* Espaçamento interno para os botões */
+  padding: 5px;
   grid-column-start: 2;
 }
 
@@ -40,3 +40,14 @@ display: grid;
   align-self: center;
   border-radius: 50%;
 }
+
+.total{
+  text-align: center;
+  background-color: #ff6347;
+  color: #fff;
+  margin: 30%;
+  font-size: large;
+  border-radius: 8px;
+
+}
+

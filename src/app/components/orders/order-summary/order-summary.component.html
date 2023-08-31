@@ -1,6 +1,9 @@
 <div class="order-summary">
   <h2>Resumo do Pedido</h2>
 
+  <!-- <div *ngFor="let order of orders" class="order-container">
+    <h3>{{ order.customerName }}</h3> inserir nome do cliente e numero da mesa-->
+
   <div class="order-description"><h4>Item</h4><h4>Preço</h4><h4>Qtd</h4></div>
   
   <div *ngFor="let item of cartService.getCartItems(); let i = index" class="summary-item">
@@ -13,7 +16,7 @@
     </div>
   </div>
 
-  <p>Total: {{ calculateTotal() | currency }}</p>
+   <p class="total">Total: {{ calculateTotal() |  currency:'BRL' }}</p>
 
 </div>
 
