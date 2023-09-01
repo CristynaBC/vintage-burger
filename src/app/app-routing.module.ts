@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginModule } from './components/login/login.module';
 import { OrdersModule } from './components/orders/orders.module';
 import { OptionsModule } from './components/options/options.module';
+import { KitchenCurrentModule } from './components/kitchen/kitchen-current/kitchen-current.module';
+import { KitchenReadyModule } from './components/kitchen/kitchen-ready/kitchen-ready.module';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'pedidos',
     loadChildren: () => import('./components/orders/orders.module').then( m => OrdersModule)
+  },
+  {
+    path: 'em-andamento',
+    loadChildren: () => import('./components/kitchen/kitchen-current/kitchen-current.module').then( m => KitchenCurrentModule)
+  },
+  {
+    path: 'pedidos-prontos',
+    loadChildren: () => import('./components/kitchen/kitchen-ready/kitchen-ready.module').then( m => KitchenReadyModule)
   }
 ];
 
