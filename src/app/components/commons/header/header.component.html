@@ -15,7 +15,7 @@
       </label>
     </div>
     <div class="icon-label">
-      <mat-icon id="orders-ready-icon" class="header-icon"
+      <mat-icon id="orders-ready-icon" class="header-icon" routerLink="/pedidos-prontos"
         >check_circle</mat-icon
       >
       <label for id="orders-ready-icon" class="header-icon-label"
@@ -23,7 +23,7 @@
       </label>
     </div>
     <div class="icon-label">
-      <mat-icon id="orders-waiting-icon" class="header-icon"
+      <mat-icon id="orders-waiting-icon" class="header-icon" routerLink="/em-andamento"
         >watch_later</mat-icon
       >
       <label for id="orders-waiting-icon" class="header-icon-label">
@@ -40,7 +40,7 @@
       <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
       <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="/pedidos">Novo pedido</button>
-        <button mat-menu-item>Pedidos prontos</button>
-        <button mat-menu-item>Pedidos em andamento</button>
+        <button mat-menu-item routerLink="/pedidos-prontos">Pedidos prontos</button>
+        <button mat-menu-item routerLink="/em-andamento">Pedidos em andamento</button>
       </mat-menu>     
 </header>

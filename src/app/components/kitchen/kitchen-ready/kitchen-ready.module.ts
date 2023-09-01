@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { KitchenReadyRoutingModule } from './kitchen-ready-routing.module';
 import { KitchenReadyComponent } from './kitchen-ready.component';
+import { CommonsModule } from '../../commons/commons.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { KitchenReadyComponent } from './kitchen-ready.component';
   ],
   imports: [
     CommonModule,
-    KitchenReadyRoutingModule
+    KitchenReadyRoutingModule,
+    CommonsModule
   ]
 })
 export class KitchenReadyModule { }

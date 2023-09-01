@@ -12,7 +12,7 @@ import { CommonsModule } from '../../commons/commons.module';
   imports: [
     CommonModule,
     KitchenCurrentRoutingModule,
-    CommonsModule
+    CommonsModule,
   ]
 })
 export class KitchenCurrentModule { }
