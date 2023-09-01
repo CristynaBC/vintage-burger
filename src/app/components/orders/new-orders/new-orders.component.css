@@ -63,26 +63,18 @@ h2{
   border-radius: 8px;
   flex: 1; /*Distribui o espaço horizontal igualmente*/
   width: 150px;
-  height: 220px;
+  height: 220px
 }
 
   .product-card-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de igual tamanho */
-  gap: 20px; /* Espaçamento entre os cards */
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-  gap: 20px; /* Espaçamento entre os cards */
-  grid-template-rows: auto auto; /* Duas linhas de altura automática */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
-
-
-  @media (min-width: 1054px) {
-    .cards-container {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
