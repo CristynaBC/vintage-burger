@@ -1,9 +1,15 @@
 <div class="order-summary">
   <h2>Resumo do Pedido</h2>
 
-  <!-- <div *ngFor="let order of orders" class="order-container">
-    <h3>{{ order.customerName }}</h3> inserir nome do cliente e numero da mesa-->
-
+  <div class="customer-data">
+  <label for="name">Cliente:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="customerName">
+  <label for="tableNumber">Número da Mesa:</label>
+  <select id="tableNumber" name="tableNumber" [(ngModel)]="tableNumber">
+  <option *ngFor="let table of availableTable" [value]="table">{{ table }}</option>
+  </select>
+  </div>
+  
   <div class="order-description"><h4>Item</h4><h4>Preço</h4><h4>Qtd</h4></div>
   
   <div *ngFor="let item of cartService.getCartItems(); let i = index" class="summary-item">

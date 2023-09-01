@@ -51,9 +51,16 @@ display: grid;
   min-width: 15px;
 
 }
+.customer-data {
+  text-align: center;
+
+}
 
 @media screen and (max-width: 539px) {
   .order-categories{
    display: inline-block;
+  }
+  .order-description {
+    display: none;
   }
 }

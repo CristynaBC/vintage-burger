@@ -8,6 +8,9 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class OrderSummaryComponent {
   @Input() cartItems: any[] = [];
+  customerName: string = '';
+  tableNumber: number = 1;
+  availableTable: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   constructor(public cartService: CartService) { }
 
