@@ -7,7 +7,7 @@ import { NewOrdersComponent } from './new-orders/new-orders.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { CommonsModule } from '../commons/commons.module';
 import { MatIconModule } from '@angular/material/icon';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     OrdersComponent,
@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
     OrdersRoutingModule,
     CommonsModule,
     MatIconModule,
+    FormsModule
   ],
   exports: [
     OrdersComponent
