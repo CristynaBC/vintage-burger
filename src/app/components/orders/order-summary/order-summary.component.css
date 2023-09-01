@@ -48,6 +48,12 @@ display: grid;
   margin: 30%;
   font-size: large;
   border-radius: 8px;
+  min-width: 15px;
 
 }
 
+@media screen and (max-width: 539px) {
+  .order-categories{
+   display: inline-block;
+  }
+}
