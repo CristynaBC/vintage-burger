@@ -1,26 +1,46 @@
 <header>
-    <img class="header-logo" src="../../../../assets/img/vb-header-logo.png" alt="logo vintage burger" />
-    <div class="icon-container">
-        <div class="icon-label">
-            <mat-icon id="new-order-icon" class="header-icon" routerLink="/pedidos">note_add</mat-icon>
-            <label for id="new-order-icon" class="header-icon-label">
-                Novo pedido
-            </label>
-        </div>
-        <div class="icon-label">
-            <mat-icon id="orders-ready-icon" class="header-icon">check_circle</mat-icon>
-            <label for id="orders-ready-icon" class="header-icon-label">Pedidos prontos
-            </label>
-        </div>
-        <div class="icon-label">
-            <mat-icon id="orders-waiting-icon" class="header-icon">watch_later</mat-icon>
-            <label for id="orders-waiting-icon" class="header-icon-label">
-               Em andamento
-            </label>
-        </div>
-        <div class="icon-label">
-            <mat-icon id="exit-icon" class="header-icon" routerLink="">exit_to_app</mat-icon>
-            <label for id="exit-icon" class="header-icon-label"> Sair </label>
-        </div>
+  <img
+    class="header-logo"
+    src="../../../../assets/img/vb-header-logo.png"
+    alt="logo vintage burger"
+    routerLink="/home"
+  />
+  <div class="icon-container">
+    <div class="icon-label">
+      <mat-icon id="new-order-icon" class="header-icon" routerLink="/pedidos"
+        >note_add</mat-icon
+      >
+      <label for id="new-order-icon" class="header-icon-label">
+        Novo pedido
+      </label>
     </div>
+    <div class="icon-label">
+      <mat-icon id="orders-ready-icon" class="header-icon"
+        >check_circle</mat-icon
+      >
+      <label for id="orders-ready-icon" class="header-icon-label"
+        >Pedidos prontos
+      </label>
+    </div>
+    <div class="icon-label">
+      <mat-icon id="orders-waiting-icon" class="header-icon"
+        >watch_later</mat-icon
+      >
+      <label for id="orders-waiting-icon" class="header-icon-label">
+        Em andamento
+      </label>
+    </div>
+    <div class="icon-label">
+      <mat-icon id="exit-icon" class="header-icon" routerLink=""
+        >exit_to_app</mat-icon
+      >
+      <label for id="exit-icon" class="header-icon-label"> Sair </label>
+    </div>
+  </div>
+      <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/pedidos">Novo pedido</button>
+        <button mat-menu-item>Pedidos prontos</button>
+        <button mat-menu-item>Pedidos em andamento</button>
+      </mat-menu>     
 </header>
