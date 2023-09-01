@@ -3,6 +3,7 @@
     class="header-logo"
     src="../../../../assets/img/vb-header-logo.png"
     alt="logo vintage burger"
+    routerLink="/home"
   />
   <div class="icon-container">
     <div class="icon-label">
@@ -36,16 +37,10 @@
       <label for id="exit-icon" class="header-icon-label"> Sair </label>
     </div>
   </div>
-    <div class="hamburger-menu">
-        <button mat-button class="hamburger-icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <ul class="menu-nav" [class.open]="isMenuOpen" >
-          <li><a routerLink="/pedidos">Novo pedido</a></li>
-          <li><a>Pedidos em andamento</a></li>
-          <li><a>Pedidos prontos</a></li>
-          <li><a routerLink="">Sair</a></li>
-        </ul>
-      </div>
-      
+      <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/pedidos">Novo pedido</button>
+        <button mat-menu-item>Pedidos prontos</button>
+        <button mat-menu-item>Pedidos em andamento</button>
+      </mat-menu>     
 </header>

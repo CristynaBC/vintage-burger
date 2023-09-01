@@ -58,27 +58,9 @@ header {
   align-items: center;
 }
 
-.hamburger-icon {
-  font-size: 2.3rem;
-  color: white;
-  margin: 20px 30px 10px 10px;
-}
-
-.hamburger-button {
-  border: none;
-  background: none;
-}
-
-.menu-nav {
-  list-style: none;
-  padding: 0;
-  position: absolute;
-  width: max-content;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  right: 0; /* Align the menu to the right edge */
-  top: 25; /* Position it just below the button */
-  transform: translateX(-100%); /* Shift it fully to the left */
+.hamburger-menu {
+  transform: scale(1.5);
+  margin: 0px 30px;
 }
 
 @media (max-width: 605px){
@@ -88,7 +70,7 @@ header {
 }
 
 @media (min-width:606px ) {
-  .hamburger-button {
+  .hamburger-menu {
     display: none;
   }
 }
