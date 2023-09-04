@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginModule } from './components/login/login.module';
+import { AdminComponent } from './components/options/admin/admin.component';
 import { OrdersModule } from './components/orders/orders.module';
+import { WaiterComponent } from './components/options/waiter/waiter.component';
 import { OptionsModule } from './components/options/options.module';
+import { ChefComponent } from './components/options/chef/chef.component';
 
 const routes: Routes = [
   {
@@ -16,7 +19,10 @@ const routes: Routes = [
   {
     path: 'pedidos',
     loadChildren: () => import('./components/orders/orders.module').then( m => OrdersModule)
-  }
+  },
+  { path: 'garçom', component: WaiterComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'chef', component: ChefComponent },
 ];
 
 @NgModule({
