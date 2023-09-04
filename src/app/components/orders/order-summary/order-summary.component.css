@@ -53,8 +53,16 @@ display: grid;
 }
 .customer-data {
   text-align: center;
-
+  display: block;
+  margin: 1%;
 }
+
+.customer-name, .customer-table{
+  border-radius: 6px;
+  background-color: #fff;
+  margin: 5%;
+}
+
 
 @media screen and (max-width: 539px) {
   .order-categories{
@@ -62,5 +70,8 @@ display: grid;
   }
   .order-description {
     display: none;
+  }
+  .customer-name {
+    max-width: 100px;
   }
 }

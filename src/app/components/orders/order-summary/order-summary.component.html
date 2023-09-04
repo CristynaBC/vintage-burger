@@ -1,14 +1,13 @@
 <div class="order-summary">
   <h2>Resumo do Pedido</h2>
 
-  <div class="customer-data">
-  <label for="name">Cliente:</label>
-  <input type="text" id="name" name="name" [(ngModel)]="customerName">
-  <label for="tableNumber">Número da Mesa:</label>
-  <select id="tableNumber" name="tableNumber" [(ngModel)]="tableNumber">
-  <option *ngFor="let table of availableTable" [value]="table">{{ table }}</option>
+  <form class="customer-data">
+  <input type="text" class="customer-name" name="name" [(ngModel)]="customerName" placeholder="Nome do Cliente">
+  <select class="customer-table" name="tableNumber" [(ngModel)]="tableNumber">
+    <option [ngValue]="null">Mesa {{ tableNumber}}</option>
+    <option *ngFor="let table of availableTable" [ngValue]="table">{{ table }}</option>
   </select>
-  </div>
+  </form>
   
   <div class="order-description"><h4>Item</h4><h4>Preço</h4><h4>Qtd</h4></div>
   
