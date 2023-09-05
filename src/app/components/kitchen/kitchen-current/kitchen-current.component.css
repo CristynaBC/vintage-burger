@@ -1,0 +1,87 @@
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.order-container {
+  margin: 50px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffa696;
+  width: 300px;
+  height: fit-content;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding: 10px 10px 20px 10px;
+}
+
+.order-number {
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.order-label {
+  background: #ff6347;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.item-name,
+.item-quantity,
+.order-number,
+.order-table
+ {
+  text-align: center;
+  margin: 0;
+}
+
+
+
+.order-item {
+  background: #ff6347;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 270px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.order-ready {
+  border: none;
+  width: 100px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #FFD700;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.order-ready:hover {
+    background: #f8e578;
+    cursor:pointer;
+}
