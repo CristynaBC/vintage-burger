@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: 'pedidos',
     loadChildren: () => import('./components/orders/orders.module').then( m => OrdersModule)
-  },
+  }
 ];
 
 @NgModule({

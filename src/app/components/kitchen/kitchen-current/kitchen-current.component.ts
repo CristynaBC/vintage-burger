@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-kitchen-current',
+  templateUrl: './kitchen-current.component.html',
+  styleUrls: ['./kitchen-current.component.css']
 })
-export class HeaderComponent {
+export class KitchenCurrentComponent {
   role: string | null = null;
 
   constructor(private authService: AuthService) {}
@@ -14,5 +13,5 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.role = this.authService.getRole();
 
-  }
+ }
 }
