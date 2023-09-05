@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { OrderService } from './services/order.service';
+import { KitchenModule } from './components/kitchen/kitchen.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { OrderService } from './services/order.service';
     MatIconModule,
     FormsModule,
     HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
+    KitchenModule
   ],
   providers: [
     AuthService,

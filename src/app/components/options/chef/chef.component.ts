@@ -16,3 +16,8 @@ export class ChefComponent implements OnInit {
   }
 }
 
+
+/* email: "joao@vburger.com",
+password: 123456
+role: "chef"
+*/
