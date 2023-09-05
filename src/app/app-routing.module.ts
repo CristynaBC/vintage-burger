@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginModule } from './components/login/login.module';
 import { OrdersModule } from './components/orders/orders.module';
 import { OptionsModule } from './components/options/options.module';
+import { ProductsComponent } from './components/edit/products/products.component';
+import { EmployeesComponent } from './components/edit/employees/employees.component';
 
 const routes: Routes = [
   {
@@ -16,7 +18,13 @@ const routes: Routes = [
   {
     path: 'pedidos',
     loadChildren: () => import('./components/orders/orders.module').then( m => OrdersModule)
-  }
+  },
+  {
+    path: 'produtos',component: ProductsComponent
+  },
+  {
+    path: 'funcionarios',component: EmployeesComponent
+  },
 ];
 
 @NgModule({
