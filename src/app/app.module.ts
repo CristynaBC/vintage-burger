@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { OrderService } from './services/order.service';
 import { KitchenModule } from './components/kitchen/kitchen.module';
+import { EditModule } from './components/edit/edit.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { KitchenModule } from './components/kitchen/kitchen.module';
     FormsModule,
     HttpClientModule,
     MatMenuModule,
-    KitchenModule
+    KitchenModule,
+    EditModule
   ],
   providers: [
     AuthService,
