@@ -1,8 +1,10 @@
+import { CommonsModule } from './../commons/commons.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { KitchenCurrentComponent } from './kitchen-current/kitchen-current.component';
 import { KitchenReadyComponent } from './kitchen-ready/kitchen-ready.component';
 import { KitchenRoutingModule } from './kitchen-routing.module';
+
 
 
 
@@ -13,7 +15,8 @@ import { KitchenRoutingModule } from './kitchen-routing.module';
   ],
   imports: [
     CommonModule,
-    KitchenRoutingModule
+    KitchenRoutingModule,
+    CommonsModule
   ]
 })
 export class KitchenModule { }

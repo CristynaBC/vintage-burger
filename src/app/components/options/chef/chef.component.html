@@ -2,13 +2,14 @@
     <app-header></app-header>
         <main>
             <h2 class="home-welcome">Bem vindo(a) {{ role }} </h2>
-            <div class="home-options">
+            <div class="home-options" routerLink="/pedidos-prontos">
                 <h3>PEDIDOS PRONTOS</h3>
                 <mat-icon class="icons">check_circle</mat-icon>
             </div>
-            <div class="home-options">
+            <div class="home-options" routerLink="/em-andamento">
                 <h3>PEDIDOS EM ANDAMENTO</h3>
                 <mat-icon class="icons">watch_later</mat-icon>
             </div>
           </main>
     </body>
+   
