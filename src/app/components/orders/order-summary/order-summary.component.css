@@ -19,6 +19,7 @@ display: grid;
   margin: 2%;
   background-color: #ff6347;
   border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .btn-container {
@@ -49,6 +50,7 @@ display: grid;
   font-size: large;
   border-radius: 8px;
   min-width: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 .customer-data {
@@ -61,6 +63,9 @@ display: grid;
   border-radius: 6px;
   background-color: #fff;
   margin: 5%;
+  padding: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 
