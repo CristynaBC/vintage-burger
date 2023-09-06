@@ -15,10 +15,11 @@ h2{
     border: none;
     cursor: pointer;
     margin:2%;
-    width: 60px;
+    width: 70px;
     height: 40px;
     border-radius: 10%;
-    font-weight: bold
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   
   /* Estilo para o botão selecionado */
@@ -36,6 +37,7 @@ h2{
     justify-content: center;
     height: 50%;
     border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
 .product-btn{
@@ -51,7 +53,8 @@ h2{
   color: #fff;
   border: none;
   cursor: pointer;
-  padding: 5% 5% 5% 5%
+  padding: 5% 5% 5% 5%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
   
 .product-card {
@@ -63,7 +66,8 @@ h2{
   border-radius: 8px;
   flex: 1; /*Distribui o espaço horizontal igualmente*/
   width: 150px;
-  height: 220px
+  height: 220px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
   .product-card-container {
