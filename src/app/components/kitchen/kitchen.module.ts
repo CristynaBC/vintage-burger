@@ -5,7 +5,7 @@ import { KitchenCurrentComponent } from './kitchen-current/kitchen-current.compo
 import { KitchenReadyComponent } from './kitchen-ready/kitchen-ready.component';
 import { KitchenRoutingModule } from './kitchen-routing.module';
 import { MatIconModule } from '@angular/material/icon';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 
 

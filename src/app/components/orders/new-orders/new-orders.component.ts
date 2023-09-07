@@ -1,6 +1,6 @@
+import { ProductsService } from './../../../services/products/products.service';
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from 'src/app/services/order.service';
-import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order/order.service';
 
 @Component({
   selector: 'app-new-orders',
@@ -12,13 +12,13 @@ export class NewOrdersComponent implements OnInit {
   selectedType: string | null = null;
   selectedButtonType: string | null = null;
 
-  constructor(private orderService: OrderService, private cartService: CartService) { }
+  constructor(private productsService: ProductsService, private orderService: OrderService) { }
 
   ngOnInit(): void {
   }
 
   getProductsByType(type: string): void {
-    this.orderService.getProductsByType(type).subscribe(
+    this.productsService.getProducts().subscribe(
       (data: any) => {
         this.products = data.filter((product: any) => product.type === type);
       },
@@ -35,7 +35,7 @@ export class NewOrdersComponent implements OnInit {
   }
 
   addToCart(product: any): void {
-    this.cartService.addToCart(product); //esse método é chamado quando clicamos no botão de adicionar produto
+    this.orderService.addToCart(product); //esse método é chamado quando clicamos no botão de adicionar produto
   }
 }
 
