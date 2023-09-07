@@ -11,11 +11,11 @@
   
   <div class="order-description"><h4>Item</h4><h4>Preço</h4><h4>Qtd</h4></div>
   
-  <div *ngFor="let item of cartService.getCartItems(); let i = index" class="summary-item">
+  <div *ngFor="let item of orderService.getCartItems(); let i = index" class="summary-item">
     <div class="order-categories"><h4>{{ item.name }}</h4><h4>R$ {{ item.price }} </h4><h4>{{ item.quantity }}</h4>
     <div class="btn-container">
-    <button (click)="cartService.increaseQuantity(i)"><mat-icon>add</mat-icon></button>
-    <button (click)="cartService.decreaseQuantity(i)"><mat-icon>remove</mat-icon></button>
+    <button (click)="orderService.increaseQuantity(i)"><mat-icon>add</mat-icon></button>
+    <button (click)="orderService.decreaseQuantity(i)"><mat-icon>remove</mat-icon></button>
     <button (click)="removeItem(i)"><mat-icon>delete</mat-icon></button>
     </div>
     </div>

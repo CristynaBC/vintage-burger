@@ -1,5 +1,6 @@
+import { OrderService } from "src/app/services/order/order.service";
 import { Component, Input } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
+
 
 @Component({
   selector: 'app-order-summary',
@@ -12,22 +13,22 @@ export class OrderSummaryComponent {
   tableNumber: number | null = null;
   availableTable: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  constructor(public cartService: CartService) { }
+  constructor(public orderService: OrderService) { }
 
   calculateTotal(): number {
-    return this.cartService.calculateTotal();
+    return this.orderService.calculateTotal();
   }
 
   increaseQuantity(index: number): void { 
-    this.cartService.increaseQuantity(index);
+    this.orderService.increaseQuantity(index);
   }
 
   decreaseQuantity(index: number): void {
-    this.cartService.decreaseQuantity(index);
+    this.orderService.decreaseQuantity(index);
   }
 
   removeItem(index: number): void {
-    this.cartService.removeItem(index);
+    this.orderService.removeItem(index);
   }
 }
 

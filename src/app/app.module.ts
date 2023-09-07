@@ -8,8 +8,8 @@ import { FooterComponent } from './components/commons/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './services/auth.service';
-import { OrderService } from './services/order.service';
+import { AuthService } from './services/auth/auth.service';
+import { OrderService } from './services/order/order.service';
 import { KitchenModule } from './components/kitchen/kitchen.module';
 import { EditModule } from './components/edit/edit.module';
 

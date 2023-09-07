@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
+export class OrderService {
+  private apiUrl = 'http://localhost:8080/orders';
+
+  constructor(private http: HttpClient, private authService: AuthService) { } //permite usar o HttpClient para fazer chamadas HTTP para a API.
   cartItems: any[] = [];
   customerName: string = '';
   tableNumber: number | null = null;
@@ -46,4 +52,6 @@ export class CartService {
   calculateTotal(): number {
     return this.cartItems.reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0);
   }
-}
+  }
+
+
