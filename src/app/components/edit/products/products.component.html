@@ -1,14 +1,14 @@
 <app-header></app-header>
-<main>
-  <section class="product-container">
+<main style="display: flex; flex-wrap: wrap;">
+  <section class="product-container" *ngFor="let product of products">
     <section class="edit-frame">
     <div class="product-info">
-      <div class="product-name">Produto: pão de queijo</div>
-      <div class="product-type">tipo: lanches</div>
-      <div class="product-price">valor: R$ 5,00</div>
+      <div class="product-name">Produto: {{ product.name }}</div>
+      <div class="product-type">tipo: {{ product.type }}</div>
+      <div class="product-price">valor: {{ product.price }}</div>
     </div>
       <div class="button-container">
-      <button class="edit-product">
+      <button class="edit-product" (click)="editProduct(product)">
        <mat-icon>edit</mat-icon>
       </button>
       <button class="delete-product">
