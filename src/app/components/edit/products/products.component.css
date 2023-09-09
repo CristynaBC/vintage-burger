@@ -37,17 +37,35 @@ button{
 }
 
 
-/* CSS para o modal */
+/* estilizações do modal: */
 .modal {
-  display: none; /* Inicialmente, o modal está oculto */
-  position: fixed; /* Torna o modal fixo em relação à tela */
-  top: 50%; /* Posiciona o modal verticalmente no centro da tela */
-  left: 50%; /* Posiciona o modal horizontalmente no centro da tela */
-  transform: translate(-50%, -50%); /* Centraliza o modal corretamente */
-  z-index: 1000; /* Valor alto para garantir que o modal esteja na parte superior */
+  position: absolute;
+  z-index: 2;
+  justify-self: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  background-color: #ffa696;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  color: #fff;
 }
 
-/* Exibe o modal quando a classe .show-modal for aplicada */
-.show-modal {
-  display: block;
+.modal-content{
+  text-align: center;
+}
+
+.modal-footer{
+align-items: flex-end;
+  
+}
+
+.modal-btn{
+  margin:10%
+}
+
+.form-group{
+  margin: 10px;
 }
