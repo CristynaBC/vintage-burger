@@ -1,20 +1,34 @@
-<app-header></app-header>
-<main style="display: flex; flex-wrap: wrap;">
-  <section class="product-container" *ngFor="let product of products">
-    <section class="edit-frame">
-    <div class="product-info">
-      <div class="product-name">Produto: {{ product.name }}</div>
-      <div class="product-type">tipo: {{ product.type }}</div>
-      <div class="product-price">valor: {{ product.price }}</div>
-    </div>
-      <div class="button-container">
-      <button class="edit-product" (click)="editProduct(product)">
-       <mat-icon>edit</mat-icon>
-      </button>
-      <button class="delete-product">
-        <mat-icon>delete</mat-icon>
-      </button>
-    </div>
-    </section>
-  </section>
-</main>
+ <app-header></app-header>
+ <div class="admin-search">
+ <input type="text" class="search-item" [(ngModel)]="searchText" placeholder="Pesquisar por produto ou tipo">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Produto</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Preço (R$)</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of filteredProducts; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.type }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button class="edit-btn" (click)="editProduct(product)">
+          <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+        <td>
+          <button class="delete-btn">
+          <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
