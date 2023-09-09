@@ -23,27 +23,40 @@ export class ProductsService {
     return this.http.get(`${this.apiUrl}`, httpOptions);
   }
 
-  getProducts(): Observable<any[]> { //usa o método get do HttpClient para fazer uma requisição HTTP GET para a URL composta pela base apiUrl concatenada com o tipo de produto selecionado
-    const token = this.authService.getToken(); // Obtenha o token do AuthService
+  getProducts(): Observable<any[]> {
+    const token = this.authService.getToken();
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        Authorization: `Bearer ${token}` // Usa o token obtido do AuthService
+        Authorization: `Bearer ${token}` 
       })
     };
     return this.http.get<any[]>(`${this.apiUrl}`, httpOptions);
   }
 
   editProduct(product: any): Observable<any> {
-    const token = this.authService.getToken(); // Obtenha o token do AuthService
+    const token = this.authService.getToken(); 
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        Authorization: `Bearer ${token}` // Usa o token obtido do AuthService
+        Authorization: `Bearer ${token}` 
       })
     };
     return this.http.patch<any>(`${this.apiUrl}/${product.id}`,product, httpOptions)
   }
+
+  deleteProduct(product: any): Observable<any> {
+    const token = this.authService.getToken(); 
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: `Bearer ${token}`
+      })
+    };
+    return this.http.delete<any>(`${this.apiUrl}/${product.id}`,httpOptions)
+  }
+
 }

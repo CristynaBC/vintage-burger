@@ -19,16 +19,38 @@
         <td>{{ product.type }}</td>
         <td>{{ product.price }}</td>
         <td>
-          <button class="edit-btn" (click)="editProduct(product)">
+          <button class="edit-btn" (click)="openEditModal(product)">
           <mat-icon>edit</mat-icon>
           </button>
         </td>
         <td>
-          <button class="delete-btn">
+          <button class="delete-btn" (click)="deleteProduct(product)">
           <mat-icon>delete</mat-icon>
           </button>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar produto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button (click)="editProduct(products)">Fechar</button>  <!--verificar "products"-->
+            <button (click)="closeEditModal()">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

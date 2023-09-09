@@ -37,3 +37,17 @@ button{
 }
 
 
+/* CSS para o modal */
+.modal {
+  display: none; /* Inicialmente, o modal está oculto */
+  position: fixed; /* Torna o modal fixo em relação à tela */
+  top: 50%; /* Posiciona o modal verticalmente no centro da tela */
+  left: 50%; /* Posiciona o modal horizontalmente no centro da tela */
+  transform: translate(-50%, -50%); /* Centraliza o modal corretamente */
+  z-index: 1000; /* Valor alto para garantir que o modal esteja na parte superior */
+}
+
+/* Exibe o modal quando a classe .show-modal for aplicada */
+.show-modal {
+  display: block;
+}
