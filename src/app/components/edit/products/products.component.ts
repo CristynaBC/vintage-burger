@@ -8,9 +8,9 @@ import { ProductsService } from 'src/app/services/products/products.service';
 })
 export class ProductsComponent {
   products: any[] = []
-constructor(
-  private readonly productService: ProductsService
-){
+  searchText: string = ''; // Inicializando a variável de pesquisa vazia
+
+constructor(private readonly productService: ProductsService){
   this.loadProducts()
 }
 loadProducts(){
@@ -36,5 +36,17 @@ editProduct(product:any){
       console.error(error)
     }
   })
+}
+
+get filteredProducts(): any[] {
+  // Função para filtrar os produtos com base no texto de pesquisa
+  const searchTerm = this.searchText.toLowerCase().trim();
+
+  return this.products.filter(product => {
+    return (
+      product.name.toLowerCase().includes(searchTerm) ||
+      product.type.toLowerCase().includes(searchTerm) 
+    );
+  });
 }
 }

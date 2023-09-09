@@ -6,6 +6,7 @@ import { ProductsComponent } from './products/products.component';
 import { CommonsModule } from '../commons/commons.module';
 import { EmployeesComponent } from './employees/employees.component';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
     CommonModule,
     EditRoutingModule,
     CommonsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ]
 })
 export class EditModule { }
