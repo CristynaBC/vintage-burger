@@ -13,6 +13,8 @@ export class ProductsComponent {
   currentEditingProduct: any = null; // Produto atualmente em edição
 
   constructor(private readonly productService: ProductsService) {
+    this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
+    // console.log(this.currentEditingProduct)
     this.loadProducts();
   }
 
@@ -28,7 +30,6 @@ export class ProductsComponent {
     });
   }
 
-  // Função para filtrar os produtos com base no texto de pesquisa
   get filteredProducts(): any[] {
     const searchTerm = this.searchText.toLowerCase().trim();
 
@@ -40,27 +41,25 @@ export class ProductsComponent {
     });
   }
 
-  // Função para abrir o modal e definir o produto em edição
   openEditModal(product: any) {
-    this.currentEditingProduct = product;
+    this.currentEditingProduct = { ...product }; 
     this.isModalVisible = true;
   }
+  
+ // Função para fechar o modal
+ closeEditModal() {
+  this.isModalVisible = false;
+}
 
-  // Função para fechar o modal
-  closeEditModal() {
-    this.isModalVisible = false;
-  }
-
-  editProduct(product: any) {
-    product.price += 0.5;
-    this.productService.editProduct(product).subscribe({
+  editProduct() {
+    this.productService.editProduct(this.currentEditingProduct).subscribe({
       next: (data: any) => {
-        console.log(data);
-        this.products = [];
+        console.log('Produto editado com sucesso!', data);
         this.loadProducts();
+        this.isModalVisible = false; // Feche o modal
       },
       error: (error: any) => {
-        console.error(error);
+        console.error('Erro ao editar o produto:', error);
       },
     });
   }
