@@ -1,6 +1,11 @@
- <app-header></app-header>
- <div class="admin-search">
- <input type="text" class="search-item" [(ngModel)]="searchText" placeholder="Pesquisar por produto ou tipo">
+<app-header></app-header>
+<div class="admin-search">
+  <input
+    type="text"
+    class="search-item"
+    [(ngModel)]="searchText"
+    placeholder="Pesquisar por produto ou tipo"
+  />
   <table class="table table-hover">
     <thead>
       <tr>
@@ -20,12 +25,12 @@
         <td>{{ product.price }}</td>
         <td>
           <button class="edit-btn" (click)="openEditModal(product)">
-          <mat-icon>edit</mat-icon>
+            <mat-icon>edit</mat-icon>
           </button>
         </td>
         <td>
           <button class="delete-btn" (click)="deleteProduct(product)">
-          <mat-icon>delete</mat-icon>
+            <mat-icon>delete</mat-icon>
           </button>
         </td>
       </tr>
@@ -33,30 +38,53 @@
   </table>
 
   <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Editar produto</h5>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar produto</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="editName">Nome do Produto:</label>
+            <input
+              type="text"
+              id="editName"
+              [(ngModel)]="currentEditingProduct.name"
+              class="form-control"
+            />
           </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="editName">Nome do Produto:</label>
-              <input type="text" id="editName" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="editType">Tipo do Produto:</label>
-              <input type="text" id="editType"class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="editPrice">Preço do Produto:</label>
-              <input type="number" id="editPrice" class="form-control">
-            </div>
+          <div class="form-group">
+          <label for="editType">Tipo do Produto:</label>
+          <select
+            id="editType"
+            [(ngModel)]="currentEditingProduct.type"
+            class="form-control"
+          >
+            <option value="Cafés">Cafés</option>
+            <option value="Almoços">Almoços</option>
+            <option value="Lanches">Lanches</option>
+            <option value="Bebidas">Bebidas</option>
+          </select>
+        </div>
+          <div class="form-group">
+            <label for="editPrice">Preço do Produto (R$):</label>
+            <input
+              type="number"
+              id="editPrice"
+              [(ngModel)]="currentEditingProduct.price"
+              class="form-control"
+            />
           </div>
-          </div>
-          <div class="modal-footer">
-            <button (click)="editProduct(products)"class="modal-btn"><mat-icon>save</mat-icon></button>  <!--verificar "products"-->
-            <button (click)="closeEditModal()"class="modal-btn"><mat-icon>close</mat-icon></button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button (click)="editProduct()" class="modal-btn">
+            <mat-icon>save</mat-icon> Salvar
+          </button>
+          <button (click)="closeEditModal()" class="modal-btn">
+            <mat-icon>close</mat-icon> Fechar
+          </button>
+        </div>
       </div>
     </div>
   </div>
+</div>

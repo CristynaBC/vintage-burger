@@ -37,13 +37,14 @@ button{
 }
 
 
-/* estilizações do modal: */
+/* estilizações do modal de edição: */
 .modal {
   position: absolute;
   z-index: 2;
-  justify-self: center;
+  justify-content: center;
   width: 400px;
-  height: 400px;
+  height: 200px;
+  padding: 20px;
   border-radius: 8px;
   background-color: #ffa696;
   text-align: center;
@@ -52,14 +53,10 @@ button{
   border: none;
   color: #fff;
 }
-
-.modal-content{
-  text-align: center;
-}
-
-.modal-footer{
-align-items: flex-end;
-  
+.modal:not([hidden]) { 
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 15px;
 }
 
 .modal-btn{
@@ -68,4 +65,11 @@ align-items: flex-end;
 
 .form-group{
   margin: 10px;
+  text-align: start;
+}
+
+.form-control{
+  border-radius: 6px;
+  border: none;
+  padding: 5px;
 }
