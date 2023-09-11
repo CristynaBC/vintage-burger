@@ -11,6 +11,7 @@ export class ProductsComponent {
   searchText: string = ''; // Inicializando a variável de pesquisa vazia
   isModalVisible: boolean = false; // Variável para controlar a visibilidade do modal
   currentEditingProduct: any = null; // Produto atualmente em edição
+  isAlertVisible: boolean = false;
 
   constructor(private readonly productService: ProductsService) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
@@ -56,12 +57,22 @@ export class ProductsComponent {
       next: (data: any) => {
         console.log('Produto editado com sucesso!', data);
         this.loadProducts();
-        this.isModalVisible = false; // Feche o modal
+        this.isModalVisible = false; // Fecha o modal
+        this.showAlert() //mostra o modal de alerta
       },
       error: (error: any) => {
         console.error('Erro ao editar o produto:', error);
       },
     });
+  }
+   // Função para mostrar o modal de alerta
+   showAlert() {
+    this.isAlertVisible = true;
+  }
+
+  // Função para fechar o modal de alerta
+  closeAlert() {
+    this.isAlertVisible = false;
   }
 
   deleteProduct(productId: number) {
@@ -76,4 +87,6 @@ export class ProductsComponent {
       },
     });
   }
+
+
 }

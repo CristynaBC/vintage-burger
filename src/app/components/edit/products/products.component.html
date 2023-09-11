@@ -37,11 +37,12 @@
     </tbody>
   </table>
 
+  <!-- modal de edição de produto -->
   <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Editar produto</h5>
+          <h2 class="modal-title">Editar produto</h2>
         </div>
         <div class="form-container">
           <div class="form-group">
@@ -77,7 +78,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button (click)="editProduct()" class="modal-btn">
+          <button (click)="editProduct()" class="modal-btn" >
             <mat-icon>save</mat-icon>
           </button>
           <button (click)="closeEditModal()" class="modal-btn">
@@ -88,6 +89,13 @@
     </div>
   </div>
   
+  <!-- Alerta pós edição de produto -->
+  <div class="alert-modal" [hidden]="!isAlertVisible">
+    <div class="alert-content">
+      <p>Seu produto foi salvo com sucesso!</p>
+      <button (click)="closeAlert()">Fechar</button>
+    </div>
+  </div>
   
   
   
