@@ -92,7 +92,7 @@
   <!-- Alerta pós edição de produto -->
   <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
     <div class="alert-content">
-      <p>Seu produto foi salvo com sucesso!</p>
+      <p> O produto {{ currentEditingProduct.name }} foi alterado com sucesso!</p>
       <button (click)="closeEditAlert()">Fechar</button>
     </div>
   </div>
@@ -100,7 +100,7 @@
     <!-- Modal de exclusão de produto -->
     <div class="delete-modal" [hidden]="!isDeleteModalVisible">
       <div class="alert-content">
-        <p>Você deseja excluir este produto?</p>
+        <p>Você deseja excluir o produto {{ currentEditingProduct.name }}?</p>
         <button (click)="deleteProduct(currentEditingProduct)" class="delete-modal-btn">Sim</button>
         <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
       </div>
