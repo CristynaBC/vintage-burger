@@ -14,7 +14,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/options/options.module').then( m => OptionsModule)
   },
   {
-    path: 'pedidos',
+    path: 'cardapio',
     loadChildren: () => import('./components/orders/orders.module').then( m => OrdersModule)
   },
 ];
