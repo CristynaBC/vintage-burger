@@ -43,7 +43,7 @@
         <div class="modal-header">
           <h5 class="modal-title">Editar produto</h5>
         </div>
-        <div class="modal-body">
+        <div class="form-container">
           <div class="form-group">
             <label for="editName">Nome do Produto:</label>
             <input
@@ -54,19 +54,6 @@
             />
           </div>
           <div class="form-group">
-          <label for="editType">Tipo do Produto:</label>
-          <select
-            id="editType"
-            [(ngModel)]="currentEditingProduct.type"
-            class="form-control"
-          >
-            <option value="Cafés">Cafés</option>
-            <option value="Almoços">Almoços</option>
-            <option value="Lanches">Lanches</option>
-            <option value="Bebidas">Bebidas</option>
-          </select>
-        </div>
-          <div class="form-group">
             <label for="editPrice">Preço do Produto (R$):</label>
             <input
               type="number"
@@ -75,16 +62,32 @@
               class="form-control"
             />
           </div>
+          <div class="form-group">
+            <label for="editType">Tipo do Produto:</label>
+            <select
+              id="editType"
+              [(ngModel)]="currentEditingProduct.type"
+              class="form-control"
+            >
+              <option value="Cafés">Cafés</option>
+              <option value="Almoços">Almoços</option>
+              <option value="Lanches">Lanches</option>
+              <option value="Bebidas">Bebidas</option>
+            </select>
+          </div>
         </div>
         <div class="modal-footer">
           <button (click)="editProduct()" class="modal-btn">
-            <mat-icon>save</mat-icon> Salvar
+            <mat-icon>save</mat-icon>
           </button>
           <button (click)="closeEditModal()" class="modal-btn">
-            <mat-icon>close</mat-icon> Fechar
+            <mat-icon>close</mat-icon>
           </button>
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  
+  
+  
