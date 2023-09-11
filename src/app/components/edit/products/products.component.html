@@ -29,7 +29,7 @@
           </button>
         </td>
         <td>
-          <button class="delete-btn" (click)="deleteProduct(product)">
+          <button class="delete-btn" (click)="showDeleteModal(product)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -90,12 +90,29 @@
   </div>
   
   <!-- Alerta pós edição de produto -->
-  <div class="alert-modal" [hidden]="!isAlertVisible">
+  <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
     <div class="alert-content">
       <p>Seu produto foi salvo com sucesso!</p>
-      <button (click)="closeAlert()">Fechar</button>
+      <button (click)="closeEditAlert()">Fechar</button>
     </div>
   </div>
+
+    <!-- Modal de exclusão de produto -->
+    <div class="delete-modal" [hidden]="!isDeleteModalVisible">
+      <div class="alert-content">
+        <p>Você deseja excluir este produto?</p>
+        <button (click)="deleteProduct(currentEditingProduct)" class="delete-modal-btn">Sim</button>
+        <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
+      </div>
+    </div>
+
+    <!-- Alerta pós exclusão de produto -->
+    <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
+      <div class="alert-content">
+        <p>Produto excluído com sucesso!</p>
+        <button (click)="closeDeleteAlert()">Fechar</button>
+      </div>
+    </div>
   
   
   

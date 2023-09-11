@@ -11,7 +11,9 @@ export class ProductsComponent {
   searchText: string = ''; // Inicializando a variável de pesquisa vazia
   isModalVisible: boolean = false; // Variável para controlar a visibilidade do modal
   currentEditingProduct: any = null; // Produto atualmente em edição
-  isAlertVisible: boolean = false;
+  isEditAlertVisible: boolean = false;
+  isDeleteModalVisible: boolean = false;
+  isDeleteAlertVisible: boolean = false;
 
   constructor(private readonly productService: ProductsService) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
@@ -58,7 +60,7 @@ export class ProductsComponent {
         console.log('Produto editado com sucesso!', data);
         this.loadProducts();
         this.isModalVisible = false; // Fecha o modal
-        this.showAlert() //mostra o modal de alerta
+        this.showEditAlert() //mostra o modal de alerta
       },
       error: (error: any) => {
         console.error('Erro ao editar o produto:', error);
@@ -66,13 +68,13 @@ export class ProductsComponent {
     });
   }
    // Função para mostrar o modal de alerta
-   showAlert() {
-    this.isAlertVisible = true;
+   showEditAlert() {
+    this.isEditAlertVisible = true;
   }
 
   // Função para fechar o modal de alerta
-  closeAlert() {
-    this.isAlertVisible = false;
+  closeEditAlert() {
+    this.isEditAlertVisible = false;
   }
 
   deleteProduct(productId: number) {
@@ -81,12 +83,31 @@ export class ProductsComponent {
         console.log(data);
         this.products = [];
         this.loadProducts();
+        this.isDeleteModalVisible = false;
+        this.showDeleteAlert()
       },
       error: (error: any) => {
         console.error(error);
       },
     });
   }
+  // Função para mostrar o modal de exclusão
+  showDeleteModal(product: any) {
+    this.currentEditingProduct = product;
+    this.isDeleteModalVisible = true;
+  }
 
+  // Função para fechar o modal de exclusão
+  closeDeleteModal() {
+    this.isDeleteModalVisible = false;
+  }
+  // Função para mostrar o modal de confirmação de exclusão
+  showDeleteAlert() {
+    this.isDeleteAlertVisible = true;
+  }
 
+  // Função para fechar o modal de confirmação de exclusão
+  closeDeleteAlert() {
+    this.isDeleteAlertVisible = false;
+  }
 }
