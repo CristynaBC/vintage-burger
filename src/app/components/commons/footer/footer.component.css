@@ -1,5 +1,4 @@
 footer {
-    text-decoration: none;
     background-color: #48D1CC;
     color: #fff;
     padding: 10px;
@@ -9,4 +8,9 @@ footer {
     left: 0;
     font-size: 1em;
     text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0f4347;
   }
