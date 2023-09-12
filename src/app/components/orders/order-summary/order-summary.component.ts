@@ -30,5 +30,20 @@ export class OrderSummaryComponent {
   removeItem(index: number): void {
     this.orderService.removeItem(index);
   }
+
+  placeOrder(customerName: string, tableNumber: number): void {
+    if (!customerName || !tableNumber) {
+      return;
+    }
+    this.orderService.saveCartItems(customerName, tableNumber).subscribe(
+      (response) => {
+        console.log('Pedido feito com sucesso!', response);
+        this.orderService.clearCart();
+      },
+      (error) => {
+        console.error('Erro ao fazer o pedido', error);
+      }
+    );
+  }
 }
 

@@ -22,6 +22,7 @@
   </div>
 
    <p class="total">Total: {{ calculateTotal() |  currency:'BRL' }}</p>
+   <button (click)="placeOrder(customerName, tableNumber!)">Enviar Pedido</button>
 
 </div>
 
