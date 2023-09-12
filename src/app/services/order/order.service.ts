@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 @Injectable({
@@ -35,6 +35,52 @@ export class OrderService {
     return this.cartItems;
   }
 
+  saveCartItems(customerName: string, tableNumber: number): Observable<any> {
+    if (this.cartItems.length === 0) {
+      return of(null);
+    }
+
+    const orderData = {
+      client: customerName,
+      tableNumber: tableNumber,
+      products: this.cartItems.map((item) => ({
+        qty: item.quantity,
+        product: {
+          id: item.id,
+          name: item.name,
+          price: item.price,
+        },
+      })),
+
+      dateProcessed: '',
+      status: "pendente",
+    };
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.authService.getToken()}`,
+      }),
+    };
+
+    return this.http.post<any>(`${this.apiUrl}`, orderData, httpOptions);
+  }
+
+  clearCart(): void {
+    this.cartItems = [];
+  }
+
+  getOrdersInProgress(): Observable<any[]> {
+    const token = this.authService.getToken();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      }),
+    };
+    return this.http.get<any[]>(`${this.apiUrl}?status=pendente`, httpOptions);
+  }
+  
   increaseQuantity(index: number): void {
     this.cartItems[index].quantity++;
   }
