@@ -45,6 +45,7 @@ header {
   visibility: visible;
   opacity: 0.7;
   cursor: pointer;
+  color: #fff;
 }
 
 .icon-label:hover .header-icon {
