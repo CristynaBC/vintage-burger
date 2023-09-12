@@ -29,7 +29,7 @@
           </button>
         </td>
         <td>
-          <button class="delete-btn" (click)="deleteProduct(product)">
+          <button class="delete-btn" (click)="showDeleteModal(product)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -37,13 +37,14 @@
     </tbody>
   </table>
 
+  <!-- modal de edição de produto -->
   <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Editar produto</h5>
+          <h2 class="modal-title">Editar produto</h2>
         </div>
-        <div class="modal-body">
+        <div class="form-container">
           <div class="form-group">
             <label for="editName">Nome do Produto:</label>
             <input
@@ -54,19 +55,6 @@
             />
           </div>
           <div class="form-group">
-          <label for="editType">Tipo do Produto:</label>
-          <select
-            id="editType"
-            [(ngModel)]="currentEditingProduct.type"
-            class="form-control"
-          >
-            <option value="Cafés">Cafés</option>
-            <option value="Almoços">Almoços</option>
-            <option value="Lanches">Lanches</option>
-            <option value="Bebidas">Bebidas</option>
-          </select>
-        </div>
-          <div class="form-group">
             <label for="editPrice">Preço do Produto (R$):</label>
             <input
               type="number"
@@ -75,16 +63,56 @@
               class="form-control"
             />
           </div>
+          <div class="form-group">
+            <label for="editType">Tipo do Produto:</label>
+            <select
+              id="editType"
+              [(ngModel)]="currentEditingProduct.type"
+              class="form-control"
+            >
+              <option value="Cafés">Cafés</option>
+              <option value="Almoços">Almoços</option>
+              <option value="Lanches">Lanches</option>
+              <option value="Bebidas">Bebidas</option>
+            </select>
+          </div>
         </div>
         <div class="modal-footer">
-          <button (click)="editProduct()" class="modal-btn">
-            <mat-icon>save</mat-icon> Salvar
+          <button (click)="editProduct()" class="modal-btn" >
+            <mat-icon>save</mat-icon>
           </button>
           <button (click)="closeEditModal()" class="modal-btn">
-            <mat-icon>close</mat-icon> Fechar
+            <mat-icon>close</mat-icon>
           </button>
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  <!-- Alerta pós edição de produto -->
+  <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
+    <div class="alert-content">
+      <p>Seu produto foi salvo com sucesso!</p>
+      <button (click)="closeEditAlert()">Fechar</button>
+    </div>
+  </div>
+
+    <!-- Modal de exclusão de produto -->
+    <div class="delete-modal" [hidden]="!isDeleteModalVisible">
+      <div class="alert-content">
+        <p>Você deseja excluir este produto?</p>
+        <button (click)="deleteProduct(currentEditingProduct)" class="delete-modal-btn">Sim</button>
+        <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
+      </div>
+    </div>
+
+    <!-- Alerta pós exclusão de produto -->
+    <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
+      <div class="alert-content">
+        <p>Produto excluído com sucesso!</p>
+        <button (click)="closeDeleteAlert()">Fechar</button>
+      </div>
+    </div>
+  
+  
+  
