@@ -19,7 +19,6 @@ export class ProductsComponent {
   isDeleteAlertVisible: boolean = false;
   newProduct: any = { name: '', price: '', type: '', image: '' };
   isCreateModalVisible:boolean = false;
-  isNewProduct: boolean = false; // Adicione esta variável para controlar se é um novo produto
 
   constructor(private readonly productService: ProductsService, private authService: AuthService, private router: Router) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
@@ -143,7 +142,6 @@ export class ProductsComponent {
   
   
   openCreateModal() {
-    this.isNewProduct = true; // Defina isNewProduct como true para indicar que é um novo produto
     this.newProduct = { name: '', price: '', type: '', image: '' };
     this.isCreateModalVisible = true;
   }
