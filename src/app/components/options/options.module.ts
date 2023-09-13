@@ -8,6 +8,7 @@ import { CommonsModule } from '../commons/commons.module';
 import { WaiterComponent } from './waiter/waiter.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChefComponent } from './chef/chef.component';
+import { LoginModule } from '../login/login.module';
 
 
 @NgModule({
@@ -21,8 +22,8 @@ import { ChefComponent } from './chef/chef.component';
     CommonModule,
     OptionsRoutingModule,
     MatIconModule,
-    CommonsModule
-  
+    CommonsModule,
+    LoginModule
   ],
   exports: [
     OptionsComponent

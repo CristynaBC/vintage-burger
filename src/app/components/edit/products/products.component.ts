@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -16,10 +18,8 @@ export class ProductsComponent {
   isDeleteModalVisible: boolean = false;
   isDeleteAlertVisible: boolean = false;
 
-  constructor(
-    private authService: AuthService,
-    private readonly productService: ProductsService
-  ) {
+
+  constructor(private readonly productService: ProductsService, private authService: AuthService, private router: Router) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
     // console.log(this.currentEditingProduct)
     this.loadProducts();
@@ -118,4 +118,6 @@ export class ProductsComponent {
   closeDeleteAlert() {
     this.isDeleteAlertVisible = false;
   }
+  
 }
+
