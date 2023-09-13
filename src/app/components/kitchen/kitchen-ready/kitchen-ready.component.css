@@ -30,6 +30,7 @@ main {
   .order-header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 300px;
     padding: 10px 10px 20px 10px;
   }
@@ -54,10 +55,12 @@ main {
   .item-name,
   .item-quantity,
   .order-number,
-  .order-table
+  .order-table,
+  .client-name,
+  .order-time
    {
     text-align: center;
-    margin: 0;
+    margin: 5px;
   }
   
   

@@ -4,9 +4,10 @@
     <section class="order-container" *ngFor="let order of ordersInProgress">
       <div class="order-header">
         <p class="order-number">#{{ order.id }}</p>
-        <p class="order-table">Mesa: {{ order.tableNumber }}</p>
         <p class="client-name">Cliente: {{ order.client }}</p>
+        <p class="order-table">Mesa: {{ order.tableNumber }}</p>
       </div>
+      <p class="order-time">Tempo de preparo: {{ order.processingTime }}</p>
       <div class="order-list">
         <div class="order-label">
           <h4 class="item-name">ITEM</h4>
