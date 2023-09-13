@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { ProductsService } from 'src/app/services/products/products.service';
-
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
+  role: string | null = null;
   products: any[] = [];
   searchText: string = ''; // Inicializando a variável de pesquisa vazia
   isModalVisible: boolean = false; // Variável para controlar a visibilidade do modal
@@ -15,10 +16,17 @@ export class ProductsComponent {
   isDeleteModalVisible: boolean = false;
   isDeleteAlertVisible: boolean = false;
 
-  constructor(private readonly productService: ProductsService) {
+  constructor(
+    private authService: AuthService,
+    private readonly productService: ProductsService
+  ) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
     // console.log(this.currentEditingProduct)
     this.loadProducts();
+  }
+
+  ngOnInit(): void {
+    this.role = this.authService.getRole();
   }
 
   loadProducts() {
@@ -45,14 +53,14 @@ export class ProductsComponent {
   }
 
   openEditModal(product: any) {
-    this.currentEditingProduct = { ...product }; 
+    this.currentEditingProduct = { ...product };
     this.isModalVisible = true;
   }
-  
- // Função para fechar o modal
- closeEditModal() {
-  this.isModalVisible = false;
-}
+
+  // Função para fechar o modal
+  closeEditModal() {
+    this.isModalVisible = false;
+  }
 
   editProduct() {
     this.productService.editProduct(this.currentEditingProduct).subscribe({
@@ -60,15 +68,15 @@ export class ProductsComponent {
         console.log('Produto editado com sucesso!', data);
         this.loadProducts();
         this.isModalVisible = false; // Fecha o modal
-        this.showEditAlert() //mostra o modal de alerta
+        this.showEditAlert(); //mostra o modal de alerta
       },
       error: (error: any) => {
         console.error('Erro ao editar o produto:', error);
       },
     });
   }
-   // Função para mostrar o modal de alerta
-   showEditAlert() {
+  // Função para mostrar o modal de alerta
+  showEditAlert() {
     this.isEditAlertVisible = true;
   }
 
@@ -84,7 +92,7 @@ export class ProductsComponent {
         this.products = [];
         this.loadProducts();
         this.isDeleteModalVisible = false;
-        this.showDeleteAlert()
+        this.showDeleteAlert();
       },
       error: (error: any) => {
         console.error(error);

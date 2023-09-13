@@ -1,12 +1,12 @@
 <app-header></app-header>
 <main>
-  <section class="orders-grid">
+  <section class="orders-container">
     <section class="order-container" *ngFor="let order of ordersInProgress">
       <div class="order-header">
         <p class="order-number">#{{ order.id }}</p>
         <p class="order-table">Mesa: {{ order.tableNumber }}</p>
+        <p class="client-name">Cliente: {{ order.client }}</p>
       </div>
-      <p class="client-name">Cliente: {{ order.client }}</p>
       <div class="order-list">
         <div class="order-label">
           <h4 class="item-name">ITEM</h4>
@@ -17,9 +17,9 @@
           <h4 class="item-quantity">{{ product.qty }}</h4>
         </div>
       </div>
-      <button class="order-ready" *ngIf="role === 'garçom'">
-        <mat-icon>check_circle</mat-icon>
-        PRONTO
+      <button class="order-done" *ngIf="role === 'garçom'">
+        <mat-icon>room_service</mat-icon>
+        ENTREGUE
       </button>
     </section>
   </section>

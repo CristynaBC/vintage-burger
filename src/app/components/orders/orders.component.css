@@ -7,7 +7,7 @@
   .new-orders-container,
   .order-summary-container {
     flex: 1;
-    height: 100vh; /* Define a altura para ocupar 100% da altura da viewport */
+    height: 86vh; /* Define a altura para ocupar 100% da altura da viewport */
     overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura da seção */
 }
 
@@ -35,7 +35,8 @@
 }
 
 .new-orders-container {
-   background-color: #1F9FA7; 
+   background-color: #1F9FA7;
+   margin-top: 20px; 
 }
 
 @media (min-width: 1054px) {

@@ -58,8 +58,8 @@
       <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
       <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="/cardapio" *ngIf="role === 'garçom'">Novo pedido</button>
-        <button mat-menu-item routerLink="/pedidos-prontos" *ngIf="role === 'garçom' || 'chef'">Pedidos prontos</button>
-        <button mat-menu-item routerLink="/em-andamento" *ngIf="role === 'garçom' || 'chef'">Pedidos em andamento</button>
+        <button mat-menu-item routerLink="/pedidos-prontos" *ngIf="role === 'garçom' || role === 'chef'">Pedidos prontos</button>
+        <button mat-menu-item routerLink="/em-andamento" *ngIf="role === 'garçom' || role === 'chef'">Pedidos em andamento</button>
         <button mat-menu-item  *ngIf="role === 'admin'">Colaboradores</button>
         <button mat-menu-item  *ngIf="role === 'admin'">Cardápio</button>
       </mat-menu>     
