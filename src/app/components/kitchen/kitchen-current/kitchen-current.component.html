@@ -17,7 +17,7 @@
           <h4 class="item-quantity">{{ product.qty }}</h4>
         </div>
       </div>
-      <button class="order-ready" *ngIf="role === 'chef'">
+      <button class="order-ready" *ngIf="role === 'chef'" (click)="updateOrderStatus(order, 'pronto')">
         <mat-icon>check_circle</mat-icon>
         PRONTO
       </button>

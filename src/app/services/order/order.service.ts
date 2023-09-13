@@ -80,6 +80,29 @@ export class OrderService {
     };
     return this.http.get<any[]>(`${this.apiUrl}?status=pendente`, httpOptions);
   }
+  getOrdersReady(): Observable<any[]> {
+    const token = this.authService.getToken();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      }),
+    };
+    return this.http.get<any[]>(`${this.apiUrl}?status=pronto`, httpOptions);
+  }
+
+  updateOrder(orderId: number, updatedOrder: any): Observable<any> {
+    const token = this.authService.getToken();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      }),
+    };
+  
+    return this.http.put<any>(`${this.apiUrl}/${orderId}`, updatedOrder, httpOptions);
+  }
+  
   
   increaseQuantity(index: number): void {
     this.cartItems[index].quantity++;

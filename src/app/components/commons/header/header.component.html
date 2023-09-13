@@ -7,7 +7,7 @@
   />
   <div class="icon-container">
     <div class="icon-label"  *ngIf="role === 'garçom'">
-      <mat-icon id="new-order-icon" class="header-icon" routerLink="/pedidos"
+      <mat-icon id="new-order-icon" class="header-icon" routerLink="/cardapio"
         >note_add</mat-icon
       >
       <label for id="new-order-icon" class="header-icon-label">
@@ -57,7 +57,7 @@
   </div>
       <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/pedidos" *ngIf="role === 'garçom'">Novo pedido</button>
+        <button mat-menu-item routerLink="/cardapio" *ngIf="role === 'garçom'">Novo pedido</button>
         <button mat-menu-item routerLink="/pedidos-prontos" *ngIf="role === 'garçom' || 'chef'">Pedidos prontos</button>
         <button mat-menu-item routerLink="/em-andamento" *ngIf="role === 'garçom' || 'chef'">Pedidos em andamento</button>
         <button mat-menu-item  *ngIf="role === 'admin'">Colaboradores</button>

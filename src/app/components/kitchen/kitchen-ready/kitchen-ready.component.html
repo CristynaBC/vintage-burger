@@ -1,42 +1,26 @@
 <app-header></app-header>
 <main>
-    <section class="orders-grid">
-  <section class="order-container">
-    <div class="order-header">
-      <p class="order-number">#028</p>
-      <p class="order-table">Mesa: 12</p>
-      
-    </div>
-    <p class="client-name">Cliente: Maria da Silva</p>
-    <div class="order-list">
-      <div class="order-label">
-        <h4 class="item-name">ITEM</h4>
-        <h4 class="item-quantity">Qtd.</h4>
+  <section class="orders-grid">
+    <section class="order-container" *ngFor="let order of ordersInProgress">
+      <div class="order-header">
+        <p class="order-number">#{{ order.id }}</p>
+        <p class="order-table">Mesa: {{ order.tableNumber }}</p>
       </div>
-      <div class="order-item">
-        <h4 class="item-name">exemplo</h4>
-        <h4 class="item-quantity">1</h4>
+      <p class="client-name">Cliente: {{ order.client }}</p>
+      <div class="order-list">
+        <div class="order-label">
+          <h4 class="item-name">ITEM</h4>
+          <h4 class="item-quantity">Qtd.</h4>
+        </div>
+        <div class="order-item" *ngFor="let product of order.products">
+          <h4 class="item-name">{{ product.product.name }}</h4>
+          <h4 class="item-quantity">{{ product.qty }}</h4>
+        </div>
       </div>
-
-      <div class="order-item">
-        <h4 class="item-name">exemplo</h4>
-        <h4 class="item-quantity">3</h4>
-      </div>
-
-      <div class="order-item">
-        <h4 class="item-name">exemplo</h4>
-        <h4 class="item-quantity">2</h4>
-      </div>
-
-      <div class="order-item">
-        <h4 class="item-name">exemplo</h4>
-        <h4 class="item-quantity">6</h4>
-      </div>
-    </div>
-    <button class="order-done" *ngIf="role === 'garçom'">
-      <mat-icon>check_circle</mat-icon>
-      ENTREGUE
-    </button>
+      <button class="order-ready" *ngIf="role === 'garçom'">
+        <mat-icon>check_circle</mat-icon>
+        PRONTO
+      </button>
+    </section>
   </section>
-</section>
 </main>
