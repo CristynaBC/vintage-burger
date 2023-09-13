@@ -1,6 +1,6 @@
 <div class="order-summary">
   <h2>Resumo do Pedido</h2>
-
+  
   <form class="customer-data">
   <input type="text" class="customer-name" name="name" [(ngModel)]="customerName" placeholder="Nome do Cliente">
   <select class="customer-table" name="tableNumber" [(ngModel)]="tableNumber">
@@ -9,8 +9,10 @@
   </select>
   </form>
   
-  <div class="order-description"><h4>Item</h4><h4>Preço</h4><h4>Qtd</h4></div>
   
+  <div class="order-description"><h4>Item</h4><h4>Preço</h4><h4>Qtd</h4></div>
+  <div class="items-container">
+
   <div *ngFor="let item of orderService.getCartItems(); let i = index" class="summary-item">
     <div class="order-categories"><h4>{{ item.name }}</h4><h4>R$ {{ item.price }} </h4><h4>{{ item.quantity }}</h4>
     <div class="btn-container">
@@ -20,9 +22,10 @@
     </div>
     </div>
   </div>
+</div>
 
    <p class="total">Total: {{ calculateTotal() |  currency:'BRL' }}</p>
-   <button (click)="placeOrder(customerName, tableNumber!)">Enviar Pedido</button>
+   <button class="enviar-pedido"(click)="placeOrder(customerName, tableNumber!)">Enviar Pedido</button>
 
 </div>
 

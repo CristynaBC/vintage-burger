@@ -7,6 +7,14 @@ main {
   flex-wrap: wrap;
 }
 
+.orders-container {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .order-container {
   margin: 50px;  
   display: flex;

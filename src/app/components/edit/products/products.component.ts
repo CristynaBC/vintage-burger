@@ -18,6 +18,7 @@ export class ProductsComponent {
   isDeleteModalVisible: boolean = false;
   isDeleteAlertVisible: boolean = false;
 
+
   constructor(private readonly productService: ProductsService, private authService: AuthService, private router: Router) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
     // console.log(this.currentEditingProduct)
@@ -27,7 +28,6 @@ export class ProductsComponent {
   ngOnInit(): void {
     this.role = this.authService.getRole();
   }
- 
 
   loadProducts() {
     this.productService.getProducts().subscribe({
@@ -53,14 +53,14 @@ export class ProductsComponent {
   }
 
   openEditModal(product: any) {
-    this.currentEditingProduct = { ...product }; 
+    this.currentEditingProduct = { ...product };
     this.isModalVisible = true;
   }
-  
- // Função para fechar o modal
- closeEditModal() {
-  this.isModalVisible = false;
-}
+
+  // Função para fechar o modal
+  closeEditModal() {
+    this.isModalVisible = false;
+  }
 
   editProduct() {
     this.productService.editProduct(this.currentEditingProduct).subscribe({
@@ -68,15 +68,15 @@ export class ProductsComponent {
         console.log('Produto editado com sucesso!', data);
         this.loadProducts();
         this.isModalVisible = false; // Fecha o modal
-        this.showEditAlert() //mostra o modal de alerta
+        this.showEditAlert(); //mostra o modal de alerta
       },
       error: (error: any) => {
         console.error('Erro ao editar o produto:', error);
       },
     });
   }
-   // Função para mostrar o modal de alerta
-   showEditAlert() {
+  // Função para mostrar o modal de alerta
+  showEditAlert() {
     this.isEditAlertVisible = true;
   }
 
@@ -92,7 +92,7 @@ export class ProductsComponent {
         this.products = [];
         this.loadProducts();
         this.isDeleteModalVisible = false;
-        this.showDeleteAlert()
+        this.showDeleteAlert();
       },
       error: (error: any) => {
         console.error(error);

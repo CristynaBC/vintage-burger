@@ -5,8 +5,31 @@ h2{
   font-size: large;
 }
 
-.summary-item {
-display: grid;
+.customer-data {
+  display: flex;
+  flex-direction:row;
+  width: 100%;
+}
+
+.order-summary {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}
+
+.items-container {
+  align-items: center;
+  height: 55vh;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.items-container:hover {
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .order-description, .order-categories {
@@ -17,11 +40,18 @@ display: grid;
   align-items: center;
   text-align: center;
   margin: 2%;
+  padding: 5px;
   background-color: #ff6347;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.order-description {
+  width: 90%
 }
 
+h4 {
+  margin: 0;
+}
 .btn-container {
   display: flex;
   justify-content: center;
@@ -40,18 +70,21 @@ display: grid;
   margin: 5%;
   align-self: center;
   border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
 }
 
 .total{
   text-align: center;
   background-color: #ff6347;
   color: #fff;
-  margin: 30%;
+  padding: 10px;
+  width: fit-content;
   font-size: large;
   border-radius: 8px;
-  min-width: 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 8px;
 }
 .customer-data {
   text-align: center;
@@ -60,14 +93,26 @@ display: grid;
 }
 
 .customer-name, .customer-table{
+  text-align: center;
   border-radius: 6px;
   background-color: #fff;
   margin: 5%;
-  padding: 5px;
+  padding: 8px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.enviar-pedido {
+  border: none;
+  width: 100px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  background: #FFD700;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
 
 @media screen and (max-width: 539px) {
   .order-categories{
