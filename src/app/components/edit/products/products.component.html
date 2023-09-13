@@ -1,15 +1,15 @@
 <app-header></app-header>
 <div class="admin-page" *ngIf="role === 'admin'">
   <div class="search-header">
-  <input
-    type="text"
-    class="search-item"
-    [(ngModel)]="searchText"
-    placeholder="Pesquisar por produto ou tipo"
-  />
-  <button mat-fab class="custom-fab" (click)="openCreateModal()">
-    <mat-icon>add</mat-icon>
-  </button>
+    <input
+      type="text"
+      class="search-item"
+      [(ngModel)]="searchText"
+      placeholder="Pesquisar por produto ou tipo"
+    />
+    <button mat-fab class="custom-fab" (click)="openCreateModal()">
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
   <table class="table table-hover">
     <thead>
@@ -83,7 +83,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button (click)="editProduct()" class="modal-btn" >
+          <button (click)="editProduct()" class="modal-btn">
             <mat-icon>save</mat-icon>
           </button>
           <button (click)="closeEditModal()" class="modal-btn">
@@ -93,33 +93,39 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Alerta pós edição de produto -->
   <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
     <div class="alert-content">
-      <p> O produto {{ currentEditingProduct.name }} foi alterado com sucesso!</p>
+      <p>
+        O produto {{ currentEditingProduct.name }} foi alterado com sucesso!
+      </p>
       <button (click)="closeEditAlert()">Fechar</button>
     </div>
   </div>
 
-    <!-- Modal de exclusão de produto -->
-    <div class="delete-modal" [hidden]="!isDeleteModalVisible">
-      <div class="alert-content">
-        <p>Você deseja excluir o produto {{ currentEditingProduct.name }}?</p>
-        <button (click)="deleteProduct(currentEditingProduct)" class="delete-modal-btn">Sim</button>
-        <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
-      </div>
+  <!-- Modal de exclusão de produto -->
+  <div class="delete-modal" [hidden]="!isDeleteModalVisible">
+    <div class="alert-content">
+      <p>Você deseja excluir o produto {{ currentEditingProduct.name }}?</p>
+      <button
+        (click)="deleteProduct(currentEditingProduct)"
+        class="delete-modal-btn"
+      >
+        Sim
+      </button>
+      <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
     </div>
+  </div>
 
-    <!-- Alerta pós exclusão de produto -->
-    <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
-      <div class="alert-content">
-        <p>Produto {{ currentEditingProduct.name }} excluído com sucesso!</p>
-        <button (click)="closeDeleteAlert()">Fechar</button>
-      </div>
+  <!-- Alerta pós exclusão de produto -->
+  <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
+    <div class="alert-content">
+      <p>Produto {{ currentEditingProduct.name }} excluído com sucesso!</p>
+      <button (click)="closeDeleteAlert()">Fechar</button>
     </div>
-</div>
-  
+  </div>
+
 <!-- Modal de criação de produto -->
 <div class="modal" [hidden]="!isCreateModalVisible" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -171,6 +177,12 @@
     </div>
   </div>
 </div>
+<!-- Alerta pós exclusão de produto -->
+<div class="create-alert-modal" [hidden]="!isCreateAlertVisible">
+  <div class="alert-content">
+    <p>Produto {{newProduct.name}} adicionado com sucesso!</p>
+    <button (click)="closeCreateAlert()">Fechar</button>
+  </div>
+</div>
 
-  
-  
+</div>

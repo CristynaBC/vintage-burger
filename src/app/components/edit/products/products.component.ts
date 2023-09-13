@@ -19,6 +19,7 @@ export class ProductsComponent {
   isDeleteAlertVisible: boolean = false;
   newProduct: any = { name: '', price: '', type: '', image: '' };
   isCreateModalVisible:boolean = false;
+  isCreateAlertVisible:boolean = false;
 
   constructor(private readonly productService: ProductsService, private authService: AuthService, private router: Router) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
@@ -133,6 +134,7 @@ export class ProductsComponent {
         console.log('Produto criado com sucesso!', data);
         this.loadProducts();
         this.isCreateModalVisible = false;
+        this.showCreateAlert()
       },
       error: (error: any) => {
         console.error('Erro ao criar o produto:', error);
@@ -149,6 +151,16 @@ export class ProductsComponent {
   // Função para fechar o modal
   closeCreateModal() {
     this.isCreateModalVisible = false;
+  }
+
+   // Função para mostrar o modal de alerta
+   showCreateAlert() {
+    this.isCreateAlertVisible = true;
+  }
+
+  // Função para fechar o modal de alerta
+  closeCreateAlert() {
+    this.isCreateAlertVisible = false;
   }
 }
 
