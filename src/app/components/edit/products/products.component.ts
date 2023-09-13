@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products/products.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -7,6 +9,7 @@ import { ProductsService } from 'src/app/services/products/products.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
+  role: string | null = null;
   products: any[] = [];
   searchText: string = ''; // Inicializando a variável de pesquisa vazia
   isModalVisible: boolean = false; // Variável para controlar a visibilidade do modal
@@ -15,11 +18,16 @@ export class ProductsComponent {
   isDeleteModalVisible: boolean = false;
   isDeleteAlertVisible: boolean = false;
 
-  constructor(private readonly productService: ProductsService) {
+  constructor(private readonly productService: ProductsService, private authService: AuthService, private router: Router) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
     // console.log(this.currentEditingProduct)
     this.loadProducts();
   }
+
+  ngOnInit(): void {
+    this.role = this.authService.getRole();
+  }
+ 
 
   loadProducts() {
     this.productService.getProducts().subscribe({
@@ -110,4 +118,6 @@ export class ProductsComponent {
   closeDeleteAlert() {
     this.isDeleteAlertVisible = false;
   }
+  
 }
+
