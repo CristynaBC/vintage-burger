@@ -13,6 +13,9 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.role = this.authService.getRole();
+  }
 
+  logout(): void {
+    this.authService.logout();
   }
 }
