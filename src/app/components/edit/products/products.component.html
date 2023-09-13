@@ -109,7 +109,7 @@
     <!-- Alerta pós exclusão de produto -->
     <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
       <div class="alert-content">
-        <p>Produto excluído com sucesso!</p>
+        <p>Produto {{ currentEditingProduct.name }} excluído com sucesso!</p>
         <button (click)="closeDeleteAlert()">Fechar</button>
       </div>
     </div>
