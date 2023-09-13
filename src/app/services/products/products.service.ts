@@ -59,4 +59,16 @@ export class ProductsService {
     return this.http.delete<any>(`${this.apiUrl}/${product.id}`,httpOptions)
   }
 
+  createProduct(newProduct: any): Observable<any> {
+    const token = this.authService.getToken(); 
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: `Bearer ${token}`
+      })
+    };
+    return this.http.post<any>(`${this.apiUrl}`, newProduct, httpOptions);
+  }
 }
+

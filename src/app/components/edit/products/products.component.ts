@@ -17,7 +17,9 @@ export class ProductsComponent {
   isEditAlertVisible: boolean = false;
   isDeleteModalVisible: boolean = false;
   isDeleteAlertVisible: boolean = false;
-
+  newProduct: any = { name: '', price: '', type: '', image: '' };
+  isCreateModalVisible:boolean = false;
+  isNewProduct: boolean = false; // Adicione esta variável para controlar se é um novo produto
 
   constructor(private readonly productService: ProductsService, private authService: AuthService, private router: Router) {
     this.currentEditingProduct = { name: '', type: '', price: 0 }; // Inicializa com valores padrão
@@ -118,6 +120,37 @@ export class ProductsComponent {
   closeDeleteAlert() {
     this.isDeleteAlertVisible = false;
   }
+
+  createProduct() {
+    const newProduct = {
+      name: this.newProduct.name,
+      price: this.newProduct.price,
+      type: this.newProduct.type,
+      image: this.newProduct.image, // Adicione outros campos, se necessário
+    };
   
+    this.productService.createProduct(newProduct).subscribe({
+      next: (data: any) => {
+        console.log('Produto criado com sucesso!', data);
+        this.loadProducts();
+        this.isCreateModalVisible = false;
+      },
+      error: (error: any) => {
+        console.error('Erro ao criar o produto:', error);
+      },
+    });
+  }
+  
+  
+  openCreateModal() {
+    this.isNewProduct = true; // Defina isNewProduct como true para indicar que é um novo produto
+    this.newProduct = { name: '', price: '', type: '', image: '' };
+    this.isCreateModalVisible = true;
+  }
+
+  // Função para fechar o modal
+  closeCreateModal() {
+    this.isCreateModalVisible = false;
+  }
 }
 
