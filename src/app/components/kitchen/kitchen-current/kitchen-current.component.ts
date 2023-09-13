@@ -23,7 +23,8 @@ export class KitchenCurrentComponent {
 
  }
  updateOrderStatus(order: any, newStatus: string): void {
-  const updatedOrder = { ...order, status: newStatus };
+  const processingTime = this.orderService.getProcessedTime(order)
+  const updatedOrder = { ...order, status: newStatus, processingTime };
   this.orderService.updateOrder(order.id, updatedOrder).subscribe(
     () => {
       this.orderService.getOrdersInProgress().subscribe((orders) => {

@@ -27,7 +27,7 @@ export class KitchenReadyComponent {
     const updatedOrder = { ...order, status: newStatus };
     this.orderService.updateOrder(order.id, updatedOrder).subscribe(
       () => {
-        this.orderService.getOrdersInProgress().subscribe((orders) => {
+        this.orderService.getOrdersReady().subscribe((orders) => {
           this.ordersInProgress = orders;
         });
       },

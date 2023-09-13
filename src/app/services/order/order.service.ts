@@ -39,6 +39,13 @@ export class OrderService {
     if (this.cartItems.length === 0) {
       return of(null);
     }
+  
+    const currentTime = new Date()
+    const currentHour = currentTime.getHours()
+    const currentMinutes = currentTime.getMinutes()
+    const formattedTime = `${currentHour}:${currentMinutes}`
+    const numericTime = currentTime.getTime()
+
 
     const orderData = {
       client: customerName,
@@ -51,8 +58,9 @@ export class OrderService {
           price: item.price,
         },
       })),
-
-      dateProcessed: '',
+      dateEntry: formattedTime,
+      dateEntryData: currentTime,
+      processingTime: '',
       status: "pendente",
     };
 
@@ -103,6 +111,16 @@ export class OrderService {
     return this.http.put<any>(`${this.apiUrl}/${orderId}`, updatedOrder, httpOptions);
   }
   
+  getProcessedTime(order: any) {
+    const currentTime = new Date().getTime()
+    const orderTime = new Date(order.dateEntryData).getTime()
+    const passedTime = currentTime - orderTime;
+    const seconds = Math.floor(passedTime / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const processingTime = `${hours}h ${minutes % 60}m ${seconds % 60}s`;
+    return processingTime
+  }
   
   increaseQuantity(index: number): void {
     this.cartItems[index].quantity++;
