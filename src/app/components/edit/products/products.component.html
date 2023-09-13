@@ -126,63 +126,67 @@
     </div>
   </div>
 
-<!-- Modal de criação de produto -->
-<div class="modal" [hidden]="!isCreateModalVisible" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title">Adicionar produto</h2>
-      </div>
-      <div class="form-container">
-        <div class="form-group">
-          <label for="newProductName">Nome do Produto:</label>
-          <input
-            type="text"
-            id="newProductName"
-            [(ngModel)]="newProduct.name"
-            class="form-control"
-          />
+  <!-- Modal de criação de produto -->
+  <div
+    class="modal"
+    [hidden]="!isCreateModalVisible"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Adicionar produto</h2>
         </div>
-        <div class="form-group">
-          <label for="newProductPrice">Preço do Produto (R$):</label>
-          <input
-            type="number"
-            id="newProductPrice"
-            [(ngModel)]="newProduct.price"
-            class="form-control"
-          />
+        <div class="form-container">
+          <div class="form-group">
+            <label for="newProductName">Nome do Produto:</label>
+            <input
+              type="text"
+              id="newProductName"
+              [(ngModel)]="newProduct.name"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="newProductPrice">Preço do Produto (R$):</label>
+            <input
+              type="number"
+              id="newProductPrice"
+              [(ngModel)]="newProduct.price"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="newProductType">Tipo do Produto:</label>
+            <select
+              id="newProductType"
+              [(ngModel)]="newProduct.type"
+              class="form-control"
+            >
+              <option value="Cafés">Cafés</option>
+              <option value="Almoços">Almoços</option>
+              <option value="Lanches">Lanches</option>
+              <option value="Bebidas">Bebidas</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="newProductType">Tipo do Produto:</label>
-          <select
-            id="newProductType"
-            [(ngModel)]="newProduct.type"
-            class="form-control"
-          >
-            <option value="Cafés">Cafés</option>
-            <option value="Almoços">Almoços</option>
-            <option value="Lanches">Lanches</option>
-            <option value="Bebidas">Bebidas</option>
-          </select>
+        <div class="modal-footer">
+          <button (click)="createProduct()" class="modal-btn">
+            <mat-icon>save</mat-icon>
+          </button>
+          <button (click)="closeCreateModal()" class="modal-btn">
+            <mat-icon>close</mat-icon>
+          </button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button (click)="createProduct()" class="modal-btn">
-          <mat-icon>save</mat-icon>
-        </button>
-        <button (click)="closeCreateModal()" class="modal-btn">
-          <mat-icon>close</mat-icon>
-        </button>
       </div>
     </div>
   </div>
-</div>
-<!-- Alerta pós exclusão de produto -->
-<div class="create-alert-modal" [hidden]="!isCreateAlertVisible">
-  <div class="alert-content">
-    <p>Produto {{newProduct.name}} adicionado com sucesso!</p>
-    <button (click)="closeCreateAlert()">Fechar</button>
+  <!-- Alerta pós adição de produto -->
+  <div class="create-alert-modal" [hidden]="!isCreateAlertVisible">
+    <div class="alert-content">
+      <p>Produto {{ newProduct.name }} adicionado com sucesso!</p>
+      <button (click)="closeCreateAlert()">Fechar</button>
+    </div>
   </div>
-</div>
-
 </div>
