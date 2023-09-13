@@ -22,4 +22,18 @@ export class KitchenReadyComponent {
       console.log(orders);
     });
   }
+
+  updateOrderStatus(order: any, newStatus: string): void {
+    const updatedOrder = { ...order, status: newStatus };
+    this.orderService.updateOrder(order.id, updatedOrder).subscribe(
+      () => {
+        this.orderService.getOrdersInProgress().subscribe((orders) => {
+          this.ordersInProgress = orders;
+        });
+      },
+      (error) => {
+        console.error('Erro ao atualizar o status do pedido', error);
+      }
+    );
+  }
 }

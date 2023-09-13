@@ -17,7 +17,7 @@
           <h4 class="item-quantity">{{ product.qty }}</h4>
         </div>
       </div>
-      <button class="order-done" *ngIf="role === 'garçom'">
+      <button class="order-done" *ngIf="role === 'garçom'" (click)="updateOrderStatus(order, 'entregue')">
         <mat-icon>room_service</mat-icon>
         ENTREGUE
       </button>
