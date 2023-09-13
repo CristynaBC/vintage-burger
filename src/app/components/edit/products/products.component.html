@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="admin-search">
+<div class="admin-page" *ngIf="role === 'admin'">
   <input
     type="text"
     class="search-item"
@@ -113,6 +113,7 @@
         <button (click)="closeDeleteAlert()">Fechar</button>
       </div>
     </div>
+</div>
   
   
   
