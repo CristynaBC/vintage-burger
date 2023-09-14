@@ -1,23 +1,131 @@
 <app-header></app-header>
+<app-login-message></app-login-message>
+<div class="admin-page" *ngIf="role === 'admin'">
+  <div class="search-header">
+    <input
+      type="text"
+      class="search-item"
+      [(ngModel)]="searchText"
+      placeholder="Pesquisar por nome ou função"
+    />
+    <button mat-fab class="custom-fab">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="edit-btn" (click)="openEditModal(user)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+        <td>
+          <button class="delete-btn"(click)="showDeleteModal(user)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<body>
-<main>
-  <section class="employeeList-container">
-    <section class="edit-frame">
-    <div class="employeeList-info">
-      <div class="employeeList-name">Funcionário: Pedro Silva</div>
-      <div class="employeeList-type">Cargo: garçom</div>
-      <div class="employeeList-price">E-mail: pedro@vburger.com</div>
+  <!-- modal de edição de funcionário -->
+  <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Editar Funcionário</h2>
+        </div>
+        <div class="form-container">
+          <div class="form-group">
+            <label for="editName">Nome do Funcionário:</label>
+            <input
+              type="text"
+              id="editName"
+              [(ngModel)]="currentEditingUser.name"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editType">E-mail do funcionário:</label>
+          <input
+            id="editEmail"
+            [(ngModel)]="currentEditingUser.email"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="editPrice">Cargo do Funcionário:</label>
+          <select
+            id="editType"
+            [(ngModel)]="currentEditingUser.role"
+            class="form-control"
+          >
+            <option value="Admin">Admin</option>
+            <option value="Chef">Chef</option>
+            <option value="Garçom">Garçom</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button (click)="editUser()" class="modal-btn">
+            <mat-icon>save</mat-icon>
+          </button>
+          <button (click)="closeEditModal()" class="modal-btn">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
-      <div class="button-container">
-      <button class="edit-employeeList">
-       <mat-icon>edit</mat-icon>
-      </button>
-      <button class="delete-employeeList">
-        <mat-icon>delete</mat-icon>
-      </button>
+  </div>
+
+  <!-- Alerta pós edição de funcionário -->
+  <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
+    <div class="alert-content">
+      <p>
+        O(a) funcionário(a) {{ currentEditingUser.name }} foi alterado com
+        sucesso!
+      </p>
+      <button (click)="closeEditAlert()">Fechar</button>
     </div>
-    </section>
-  </section>
-</main>
-</body>
+  </div>
+
+  <!-- Modal de exclusão de cadastro de funcionário -->
+  <div class="delete-modal" [hidden]="!isDeleteModalVisible">
+    <div class="alert-content">
+      <p>
+        Você deseja excluir o cadastro do funcionário
+        {{ currentEditingUser.name }}?
+      </p>
+      <button (click)="deleteUser(currentEditingUser)" class="delete-modal-btn">
+        Sim
+      </button>
+      <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
+    </div>
+  </div>
+
+  <!-- Alerta pós exclusão de produto -->
+  <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
+    <div class="alert-content">
+      <p>
+        Cadastro do funcionário {{ currentEditingUser.name }} excluído com
+        sucesso!
+      </p>
+      <button (click)="closeDeleteAlert()">Fechar</button>
+    </div>
+  </div>
+</div>
