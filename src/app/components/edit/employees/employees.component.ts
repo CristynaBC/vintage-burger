@@ -13,7 +13,7 @@ export class EmployeesComponent {
   users: any[] = [];
   searchText: string = ''; // Inicializando a variável de pesquisa vazia
   isModalVisible: boolean = false; // Variável para controlar a visibilidade do modal
-  currentEditingUser: any = null; // Produto atualmente em edição
+  currentEditingUser: any = null;
   isEditAlertVisible: boolean = false;
   isDeleteModalVisible: boolean = false;
   isDeleteAlertVisible: boolean = false;
@@ -22,7 +22,7 @@ export class EmployeesComponent {
   isCreateAlertVisible:boolean = false;
 
   constructor(private readonly EmployeeService: EmployeesService, private authService: AuthService, private router: Router) {
-    this.currentEditingUser = { name: '', email: '', role: 0 }; // Inicializa com valores padrão
+    this.currentEditingUser = { name: '', email: '', role: " " }; // Inicializa com valores padrão
     this.loadUsers();
   }
 
@@ -51,5 +51,38 @@ export class EmployeesComponent {
         user.role.toLowerCase().includes(searchTerm)
       );
     });
+  }
+
+  openEditModal(user: any) {
+    this.currentEditingUser = { ...user };
+    this.isModalVisible = true;
+  }
+
+  // Função para fechar o modal
+  closeEditModal() {
+    this.isModalVisible = false;
+  }
+
+  editUser() {
+    this.EmployeeService.editUser(this.currentEditingUser).subscribe({
+      next: (data: any) => {
+        console.log('funcionário editado com sucesso!', data);
+        this.loadUsers();
+        this.isModalVisible = false; // Fecha o modal
+        this.showEditAlert(); //mostra o modal de alerta
+      },
+      error: (error: any) => {
+        console.error('Erro ao editar o funcionário:', error);
+      },
+    });
+  }
+  // Função para mostrar o modal de alerta
+  showEditAlert() {
+    this.isEditAlertVisible = true;
+  }
+
+  // Função para fechar o modal de alerta
+  closeEditAlert() {
+    this.isEditAlertVisible = false;
   }
 }

@@ -21,4 +21,16 @@ export class EmployeesService {
     };
     return this.http.get<any[]>(`${this.apiUrl}`, httpOptions);
   }
+
+  editUser(user: any): Observable<any> {
+    const token = this.authService.getToken(); 
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: `Bearer ${token}` 
+      })
+    };
+    return this.http.patch<any>(`${this.apiUrl}/${user.id}`,user, httpOptions)
+  }
 }

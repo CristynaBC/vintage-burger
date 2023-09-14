@@ -17,8 +17,8 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
-        <th scope="col">Cargo</th>
         <th scope="col">E-mail</th>
+        <th scope="col">Cargo</th>
         <th scope="col">Editar</th>
         <th scope="col">Excluir</th>
       </tr>
@@ -30,7 +30,7 @@
         <td>{{ user.role }}</td>
         <td>{{ user.email }}</td>
         <td>
-          <button class="edit-btn" >
+          <button class="edit-btn" (click)="openEditModal(user)">
             <mat-icon>edit</mat-icon>
           </button>
         </td>
@@ -42,3 +42,53 @@
       </tr>
     </tbody>
   </table>
+
+   <!-- modal de edição de funcionário -->
+   <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Editar Funcionário</h2>
+        </div>
+        <div class="form-container">
+          <div class="form-group">
+            <label for="editName">Nome do Funcionário:</label>
+            <input
+              type="text"
+              id="editName"
+              [(ngModel)]="currentEditingUser.name"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editType">E-mail do funcionário:</label>
+          <input
+            id="editEmail"
+            [(ngModel)]="currentEditingUser.email"
+            class="form-control"
+          >
+        </div>
+          <div class="form-group">
+            <label for="editPrice">Cargo do Funcionário:</label>
+            <select
+            id="editType"
+            [(ngModel)]="currentEditingUser.role"
+            class="form-control"
+          >
+            <option value="Admin">Admin</option>
+            <option value="Chef">Chef</option>
+            <option value="Garçom">Garçom</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button (click)="editUser()" class="modal-btn">
+            <mat-icon>save</mat-icon>
+          </button>
+          <button (click)="closeEditModal()" class="modal-btn">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> 
