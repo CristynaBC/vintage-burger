@@ -7,6 +7,7 @@ import { CommonsModule } from '../commons/commons.module';
 import { EmployeesComponent } from './employees/employees.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { LoginModule } from '../login/login.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     EditRoutingModule,
     CommonsModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    LoginModule
   ]
 })
 export class EditModule { }
