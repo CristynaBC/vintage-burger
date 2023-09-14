@@ -35,7 +35,7 @@
           </button>
         </td>
         <td>
-          <button class="delete-btn">
+          <button class="delete-btn"(click)="showDeleteModal(user)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -43,8 +43,8 @@
     </tbody>
   </table>
 
-   <!-- modal de edição de funcionário -->
-   <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
+  <!-- modal de edição de funcionário -->
+  <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -67,11 +67,11 @@
             id="editEmail"
             [(ngModel)]="currentEditingUser.email"
             class="form-control"
-          >
+          />
         </div>
-          <div class="form-group">
-            <label for="editPrice">Cargo do Funcionário:</label>
-            <select
+        <div class="form-group">
+          <label for="editPrice">Cargo do Funcionário:</label>
+          <select
             id="editType"
             [(ngModel)]="currentEditingUser.role"
             class="form-control"
@@ -91,15 +91,41 @@
         </div>
       </div>
     </div>
-  </div> 
+  </div>
 
-    <!-- Alerta pós edição de funcionário -->
-    <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
-      <div class="alert-content">
-        <p>
-          O(a) funcionário(a) {{ currentEditingUser.name }} foi alterado com sucesso!
-        </p>
-        <button (click)="closeEditAlert()">Fechar</button>
-      </div>
+  <!-- Alerta pós edição de funcionário -->
+  <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
+    <div class="alert-content">
+      <p>
+        O(a) funcionário(a) {{ currentEditingUser.name }} foi alterado com
+        sucesso!
+      </p>
+      <button (click)="closeEditAlert()">Fechar</button>
     </div>
-  
+  </div>
+
+  <!-- Modal de exclusão de cadastro de funcionário -->
+  <div class="delete-modal" [hidden]="!isDeleteModalVisible">
+    <div class="alert-content">
+      <p>
+        Você deseja excluir o cadastro do funcionário
+        {{ currentEditingUser.name }}?
+      </p>
+      <button (click)="deleteUser(currentEditingUser)" class="delete-modal-btn">
+        Sim
+      </button>
+      <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
+    </div>
+  </div>
+
+  <!-- Alerta pós exclusão de produto -->
+  <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
+    <div class="alert-content">
+      <p>
+        Cadastro do funcionário {{ currentEditingUser.name }} excluído com
+        sucesso!
+      </p>
+      <button (click)="closeDeleteAlert()">Fechar</button>
+    </div>
+  </div>
+</div>

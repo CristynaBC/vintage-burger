@@ -178,3 +178,38 @@ label {
 .alert-content button:hover {
   background-color: #ff6347;
 }
+
+/* estilização do modal de exclusão */
+.delete-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-modal:not([hidden]) {
+  display: flex;
+}
+
+.delete-modal-btn {
+  margin: 5px;
+}
+
+/* estilização do modal de alerta pós-exclusão */
+.delete-alert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+.delete-alert-modal:not([hidden]) {
+  display: flex;
+}

@@ -84,4 +84,38 @@ export class EmployeesComponent {
   closeEditAlert() {
     this.isEditAlertVisible = false;
   }
+
+  deleteUser(userId: number) {
+    this.EmployeeService.deleteUser(userId).subscribe({
+      next: (data: any) => {
+        console.log(data);
+        this.users = [];
+        this.loadUsers();
+        this.isDeleteModalVisible = false;
+        this.showDeleteAlert();
+      },
+      error: (error: any) => {
+        console.error(error);
+      },
+    });
+  }
+  // Função para mostrar o modal de exclusão
+  showDeleteModal(user: any) {
+    this.currentEditingUser = user;
+    this.isDeleteModalVisible = true;
+  }
+
+  // Função para fechar o modal de exclusão
+  closeDeleteModal() {
+    this.isDeleteModalVisible = false;
+  }
+  // Função para mostrar o modal de confirmação de exclusão
+  showDeleteAlert() {
+    this.isDeleteAlertVisible = true;
+  }
+
+  // Função para fechar o modal de confirmação de exclusão
+  closeDeleteAlert() {
+    this.isDeleteAlertVisible = false;
+  }
 }

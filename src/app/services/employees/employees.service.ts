@@ -33,4 +33,17 @@ export class EmployeesService {
     };
     return this.http.patch<any>(`${this.apiUrl}/${user.id}`,user, httpOptions)
   }
+
+  deleteUser(user: any): Observable<any> {
+    const token = this.authService.getToken(); 
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: `Bearer ${token}`
+      })
+    };
+    return this.http.delete<any>(`${this.apiUrl}/${user.id}`,httpOptions)
+  }
+
 }
