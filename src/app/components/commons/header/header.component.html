@@ -15,7 +15,7 @@
       </label>
     </div>
 
-    <div class="icon-label"  *ngIf="role === 'garçom' || 'chef'">
+    <div class="icon-label"  *ngIf="role !== 'admin'">
       <mat-icon id="orders-ready-icon" class="header-icon" routerLink="/pedidos-prontos"
         >check_circle</mat-icon
       >
@@ -24,7 +24,7 @@
       </label>
     </div>
 
-    <div class="icon-label" *ngIf="role === 'garçom' || 'chef'">
+    <div class="icon-label" *ngIf="role !== 'admin'">
       <mat-icon id="orders-waiting-icon" class="header-icon" routerLink="/em-andamento"
         >watch_later</mat-icon
       >
