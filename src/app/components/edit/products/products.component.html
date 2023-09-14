@@ -81,6 +81,15 @@
               <option value="Bebidas">Bebidas</option>
             </select>
           </div>
+          <div class="form-group">
+            <label for="editType">Imagem do Produto(URL):</label>
+            <input
+              type="url"
+              id="editType"
+              [(ngModel)]="currentEditingProduct.image"
+              class="form-control"
+            />
+          </div>
         </div>
         <div class="modal-footer">
           <button (click)="editProduct()" class="modal-btn">
@@ -158,7 +167,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="newProductType">Tipo do Produto:</label>
+            <label for="newProductType">Tipo do Produto</label>
             <select
               id="newProductType"
               [(ngModel)]="newProduct.type"
@@ -169,6 +178,15 @@
               <option value="Lanches">Lanches</option>
               <option value="Bebidas">Bebidas</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="newProductImage">Imagem do Produto(URL):</label>
+            <input
+              type="url"
+              id="newProductImage"
+              [(ngModel)]="newProduct.image"
+              class="form-control"
+            />
           </div>
         </div>
         <div class="modal-footer">

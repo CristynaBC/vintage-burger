@@ -126,7 +126,7 @@ export class ProductsComponent {
       name: this.newProduct.name,
       price: this.newProduct.price,
       type: this.newProduct.type,
-      image: this.newProduct.image, // Adicione outros campos, se necessário
+      image: this.newProduct.image,
     };
   
     this.productService.createProduct(newProduct).subscribe({
