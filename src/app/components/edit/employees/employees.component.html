@@ -92,3 +92,14 @@
       </div>
     </div>
   </div> 
+
+    <!-- Alerta pós edição de funcionário -->
+    <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
+      <div class="alert-content">
+        <p>
+          O(a) funcionário(a) {{ currentEditingUser.name }} foi alterado com sucesso!
+        </p>
+        <button (click)="closeEditAlert()">Fechar</button>
+      </div>
+    </div>
+  

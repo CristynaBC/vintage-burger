@@ -33,7 +33,6 @@ export class EmployeesComponent {
   loadUsers() {
     this.EmployeeService.getUsers().subscribe({
       next: (data: any) => {
-        console.log(data);
         this.users = data;
       },
       error: (error: any) => {
@@ -69,7 +68,7 @@ export class EmployeesComponent {
         console.log('funcionário editado com sucesso!', data);
         this.loadUsers();
         this.isModalVisible = false; // Fecha o modal
-        this.showEditAlert(); //mostra o modal de alerta
+        this.showEditAlert();
       },
       error: (error: any) => {
         console.error('Erro ao editar o funcionário:', error);
