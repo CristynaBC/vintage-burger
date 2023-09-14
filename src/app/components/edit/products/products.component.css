@@ -230,3 +230,13 @@ label {
 .create-alert-modal:not([hidden]) {
   display: flex;
 }
+
+@media (max-width: 480px) {
+  .search-header {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .custom-fab {
+    margin-bottom: 30px;
+  }
+}
