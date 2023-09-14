@@ -41,4 +41,15 @@ export class EmployeesComponent {
       },
     });
   }
+
+  get filteredUsers(): any[] {
+    const searchTerm = this.searchText.toLowerCase().trim();
+
+    return this.users.filter((user) => {
+      return (
+        user.name.toLowerCase().includes(searchTerm) ||
+        user.role.toLowerCase().includes(searchTerm)
+      );
+    });
+  }
 }

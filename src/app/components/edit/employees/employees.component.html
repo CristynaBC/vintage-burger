@@ -24,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users; let i = index">
+      <tr *ngFor="let user of filteredUsers; let i = index">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ user.name }}</td>
         <td>{{ user.role }}</td>
