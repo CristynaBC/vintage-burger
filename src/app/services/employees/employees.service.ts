@@ -55,7 +55,6 @@ export class EmployeesService {
         Authorization: `Bearer ${token}`,
       }),
     };
-    console.log('Dados recebidos para criar um novo usuário:', newUser);
     return this.http.post<any>(`${this.apiUrl}`, newUser, httpOptions);
   }
 }

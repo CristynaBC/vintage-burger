@@ -69,6 +69,15 @@
               class="form-control"
             />
           </div>
+        <div class="form-group">
+          <label for="editEmail">Nova senha:</label>
+          <input
+            type="password"
+            id="currentEditingUser.email"
+            [(ngModel)]="currentEditingUser.password"
+            class="form-control"
+            />
+          </div>
           <div class="form-group">
             <label for="editRole">Cargo do funcionário:</label>
             <select
@@ -158,7 +167,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="editEmail">Senha Temporária:</label>
+            <label for="editEmail">Senha de acesso:</label>
             <input
               type="password"
               id="NewUserPassword"
