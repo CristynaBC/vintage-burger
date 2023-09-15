@@ -29,4 +29,11 @@
 
 </div>
 
+  <!-- Alerta pós envio do pedido para a cozinha -->
+  <div class="alert-modal" [hidden]="!isOrderAlertVisible">
+    <div class="alert-content">
+      <p>O pedido foi enviado para a cozinha!</p>
+      <button (click)="closeOrderAlert()">Fechar</button>
+    </div>
+  </div>
   

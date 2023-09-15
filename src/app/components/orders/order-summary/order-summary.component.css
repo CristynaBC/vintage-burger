@@ -114,6 +114,44 @@ h4 {
 
 }
 
+/* estilização do modal de alerta pós envio para a cozinha*/
+.alert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+.alert-modal:not([hidden]) {
+  display: flex;
+}
+
+.alert-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.alert-content button {
+  background-color: #ffa696;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.alert-content button:hover {
+  background-color: #ff6347;
+}
+
+
 @media screen and (max-width: 539px) {
   .order-categories{
    display: inline-block;
