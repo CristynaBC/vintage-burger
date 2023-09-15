@@ -231,10 +231,17 @@ label {
   display: flex;
 }
 
+@media (min-width: 768px){
+  table{
+    width: 100%;
+  }
+}
+
 @media (max-width: 480px) {
   .search-header {
     flex-direction: column;
     flex-wrap: wrap;
+    max-width: 100%;;
   }
   .custom-fab {
     margin-bottom: 30px;

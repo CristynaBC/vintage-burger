@@ -1,5 +1,6 @@
 <app-header></app-header>
-  <section class="orders-container">
+<app-login-message></app-login-message>
+  <section class="orders-container" *ngIf="role !== 'admin'">
     <section class="order-container" *ngFor="let order of ordersInProgress">
       <div class="order-header">
         <p class="order-number">#{{ order.id }}</p>

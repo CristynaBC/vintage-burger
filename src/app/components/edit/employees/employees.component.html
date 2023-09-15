@@ -52,7 +52,7 @@
         </div>
         <div class="form-container">
           <div class="form-group">
-            <label for="editName">Nome do Funcionário:</label>
+            <label for="editName">Nome do Colaborador:</label>
             <input
               type="text"
               id="editName"
@@ -61,7 +61,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="editEmail">E-mail do funcionário:</label>
+            <label for="editEmail">E-mail do Colaborador:</label>
             <input
               type="email"
               id="editEmail"
@@ -70,7 +70,7 @@
             />
           </div>
         <div class="form-group">
-          <label for="editEmail">Nova senha:</label>
+          <label for="editEmail">Nova Senha:</label>
           <input
             type="password"
             id="currentEditingUser.email"
@@ -79,7 +79,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="editRole">Cargo do funcionário:</label>
+            <label for="editRole">Cargo do Colaborador:</label>
             <select
               id="editRole"
               [(ngModel)]="currentEditingUser.role"
@@ -107,7 +107,7 @@
   <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
     <div class="alert-content">
       <p>
-        O cadastro do funcionário(a) {{ currentEditingUser.name }} foi alterado com sucesso!
+        O cadastro do Colaborador(a) {{ currentEditingUser.name }} foi alterado com sucesso!
       </p>
       <button (click)="closeEditAlert()">Fechar</button>
     </div>
@@ -116,7 +116,7 @@
   <!-- Modal de exclusão de cadastro -->
   <div class="delete-modal" [hidden]="!isDeleteModalVisible">
     <div class="alert-content">
-      <p>Você deseja excluir o cadastro do(a) funcionário(a) {{ currentEditingUser.name }}?</p>
+      <p>Você deseja excluir o cadastro do(a) colaborador(a) {{ currentEditingUser.name }}?</p>
       <button
         (click)="deleteUser(currentEditingUser)"
         class="delete-modal-btn"
@@ -149,7 +149,7 @@
         </div>
         <div class="form-container">
           <div class="form-group">
-            <label for="newUserName">Nome do Funcionário:</label>
+            <label for="newUserName">Nome do Colaborador:</label>
             <input
               type="text"
               id="newUserName"
@@ -158,7 +158,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="editEmail">E-mail do funcionário:</label>
+            <label for="editEmail">E-mail do Colaborador:</label>
             <input
               type="email"
               id="NewUserEmail"
@@ -167,7 +167,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="editEmail">Senha de acesso:</label>
+            <label for="editEmail">Senha de Acesso:</label>
             <input
               type="password"
               id="NewUserPassword"
@@ -176,7 +176,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="newUserRole">Cargo do Funcionário</label>
+            <label for="newUserRole">Cargo do Colaborador</label>
             <select
               id="newUserRole"
               [(ngModel)]="newUser.role"
@@ -202,7 +202,7 @@
   <!-- Alerta pós criação de cadastro -->
   <div class="create-alert-modal" [hidden]="!isCreateAlertVisible">
     <div class="alert-content">
-      <p>O cadastro do funcionário {{ newUser.name }} foi criado com sucesso!</p>
+      <p>O cadastro do Colaborador {{ newUser.name }} foi criado com sucesso!</p>
       <button (click)="closeCreateAlert()">Fechar</button>
     </div>
   </div>
