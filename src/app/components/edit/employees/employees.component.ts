@@ -22,7 +22,7 @@ export class EmployeesComponent {
   isCreateAlertVisible:boolean = false;
 
   constructor(private readonly EmployeeService: EmployeesService, private authService: AuthService, private router: Router) {
-    this.currentEditingUser = { name: '', email: '', role: " " }; // Inicializa com valores padrão
+    this.currentEditingUser = { name: '', email: '', role: '' }; // Inicializa com valores padrão
     this.loadUsers();
   }
 
@@ -117,5 +117,51 @@ export class EmployeesComponent {
   // Função para fechar o modal de confirmação de exclusão
   closeDeleteAlert() {
     this.isDeleteAlertVisible = false;
+  }
+
+  createUser() {
+    const newUser = {
+      name: this.newUser.name,
+      email: this.newUser.email,
+      password: this.newUser.password,
+      role: this.newUser.role,
+    };
+    console.log('Novo usuário a ser criado:', newUser);
+
+  
+    this.EmployeeService.createUser(newUser).subscribe({
+      next: (data: any) => {
+        console.log(data)
+        console.log('Cadastro criado com sucesso!', data);
+        this.loadUsers();
+        this.isCreateModalVisible = false;
+        this.showCreateAlert()
+      },
+      error: (error: any) => {
+        console.error('Erro ao criar o cadastro:', error);
+      },
+      
+    });
+  }
+  
+  
+  openCreateModal() {
+    this.newUser = { name: '', email: '', role: ''};
+    this.isCreateModalVisible = true;
+  }
+
+  // Função para fechar o modal
+  closeCreateModal() {
+    this.isCreateModalVisible = false;
+  }
+
+   // Função para mostrar o modal de alerta
+   showCreateAlert() {
+    this.isCreateAlertVisible = true;
+  }
+
+  // Função para fechar o modal de alerta
+  closeCreateAlert() {
+    this.isCreateAlertVisible = false;
   }
 }
