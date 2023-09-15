@@ -6,9 +6,9 @@
       type="text"
       class="search-item"
       [(ngModel)]="searchText"
-      placeholder="Pesquisar por nome ou função"
+      placeholder="Pesquisar por nome ou cargo"
     />
-    <button mat-fab class="custom-fab">
+    <button mat-fab class="custom-fab" (click)="openCreateModal()">
       <mat-icon>add</mat-icon>
     </button>
   </div>
@@ -27,15 +27,15 @@
       <tr *ngFor="let user of filteredUsers; let i = index">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ user.name }}</td>
-        <td>{{ user.role }}</td>
         <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
         <td>
           <button class="edit-btn" (click)="openEditModal(user)">
             <mat-icon>edit</mat-icon>
           </button>
         </td>
         <td>
-          <button class="delete-btn"(click)="showDeleteModal(user)">
+          <button class="delete-btn" (click)="showDeleteModal(user)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -43,12 +43,12 @@
     </tbody>
   </table>
 
-  <!-- modal de edição de funcionário -->
+  <!-- modal de edição de cadastro -->
   <div class="modal" [hidden]="!isModalVisible" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">Editar Funcionário</h2>
+          <h2 class="modal-title">Editar Cadastro</h2>
         </div>
         <div class="form-container">
           <div class="form-group">
@@ -60,26 +60,27 @@
               class="form-control"
             />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="editType">E-mail do funcionário:</label>
-          <input
-            id="editEmail"
-            [(ngModel)]="currentEditingUser.email"
-            class="form-control"
-          />
-        </div>
-        <div class="form-group">
-          <label for="editPrice">Cargo do Funcionário:</label>
-          <select
-            id="editType"
-            [(ngModel)]="currentEditingUser.role"
-            class="form-control"
-          >
-            <option value="Admin">Admin</option>
-            <option value="Chef">Chef</option>
-            <option value="Garçom">Garçom</option>
-          </select>
+          <div class="form-group">
+            <label for="editEmail">E-mail do funcionário:</label>
+            <input
+              type="email"
+              id="editEmail"
+              [(ngModel)]="currentEditingUser.email"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="editRole">Cargo do funcionário:</label>
+            <select
+              id="editRole"
+              [(ngModel)]="currentEditingUser.role"
+              class="form-control"
+            >
+              <option value="Admin">Admin</option>
+              <option value="Chef">Chef</option>
+              <option value="Garçom">Garçom</option>
+            </select>
+          </div>
         </div>
         <div class="modal-footer">
           <button (click)="editUser()" class="modal-btn">
@@ -93,39 +94,107 @@
     </div>
   </div>
 
-  <!-- Alerta pós edição de funcionário -->
+  <!-- Alerta pós edição de cadastro -->
   <div class="edit-alert-modal" [hidden]="!isEditAlertVisible">
     <div class="alert-content">
       <p>
-        O(a) funcionário(a) {{ currentEditingUser.name }} foi alterado com
-        sucesso!
+        O cadastro do funcionário(a) {{ currentEditingUser.name }} foi alterado com sucesso!
       </p>
       <button (click)="closeEditAlert()">Fechar</button>
     </div>
   </div>
 
-  <!-- Modal de exclusão de cadastro de funcionário -->
+  <!-- Modal de exclusão de cadastro -->
   <div class="delete-modal" [hidden]="!isDeleteModalVisible">
     <div class="alert-content">
-      <p>
-        Você deseja excluir o cadastro do funcionário
-        {{ currentEditingUser.name }}?
-      </p>
-      <button (click)="deleteUser(currentEditingUser)" class="delete-modal-btn">
+      <p>Você deseja excluir o cadastro do(a) funcionário(a) {{ currentEditingUser.name }}?</p>
+      <button
+        (click)="deleteUser(currentEditingUser)"
+        class="delete-modal-btn"
+      >
         Sim
       </button>
       <button (click)="closeDeleteModal()" class="delete-modal-btn">Não</button>
     </div>
   </div>
 
-  <!-- Alerta pós exclusão de produto -->
+  <!-- Alerta pós exclusão de cadastro -->
   <div class="delete-alert-modal" [hidden]="!isDeleteAlertVisible">
     <div class="alert-content">
-      <p>
-        Cadastro do funcionário {{ currentEditingUser.name }} excluído com
-        sucesso!
-      </p>
+      <p>O cadastro de {{ currentEditingUser.name }} foi excluído com sucesso!</p>
       <button (click)="closeDeleteAlert()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal de criação de cadastro -->
+  <div
+    class="modal"
+    [hidden]="!isCreateModalVisible"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Criar cadastro</h2>
+        </div>
+        <div class="form-container">
+          <div class="form-group">
+            <label for="newUserName">Nome do Funcionário:</label>
+            <input
+              type="text"
+              id="newUserName"
+              [(ngModel)]="newUser.name"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="editEmail">E-mail do funcionário:</label>
+            <input
+              type="email"
+              id="NewUserEmail"
+              [(ngModel)]="newUser.email"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="editEmail">Senha Temporária:</label>
+            <input
+              type="password"
+              id="NewUserPassword"
+              [(ngModel)]="newUser.password"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="newUserRole">Cargo do Funcionário</label>
+            <select
+              id="newUserRole"
+              [(ngModel)]="newUser.role"
+              class="form-control"
+            >
+            <option value="Admin">Admin</option>
+            <option value="Chef">Chef</option>
+            <option value="Garçom">Garçom</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button (click)="createUser()" class="modal-btn">
+            <mat-icon>save</mat-icon>
+          </button>
+          <button (click)="closeCreateModal()" class="modal-btn">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Alerta pós criação de cadastro -->
+  <div class="create-alert-modal" [hidden]="!isCreateAlertVisible">
+    <div class="alert-content">
+      <p>O cadastro do funcionário {{ newUser.name }} foi criado com sucesso!</p>
+      <button (click)="closeCreateAlert()">Fechar</button>
     </div>
   </div>
 </div>
