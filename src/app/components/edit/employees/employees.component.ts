@@ -17,12 +17,12 @@ export class EmployeesComponent {
   isEditAlertVisible: boolean = false;
   isDeleteModalVisible: boolean = false;
   isDeleteAlertVisible: boolean = false;
-  newUser: any = { name: '', email: '', role: '' };
+  newUser: any = { name: '', email: '', role: '', password: '' };
   isCreateModalVisible:boolean = false;
   isCreateAlertVisible:boolean = false;
 
   constructor(private readonly EmployeeService: EmployeesService, private authService: AuthService, private router: Router) {
-    this.currentEditingUser = { name: '', email: '', role: '' }; // Inicializa com valores padrão
+    this.currentEditingUser = { name: '', email: '', role: '', password: '' }; // Inicializa com valores padrão
     this.loadUsers();
   }
 
@@ -126,8 +126,6 @@ export class EmployeesComponent {
       password: this.newUser.password,
       role: this.newUser.role,
     };
-    console.log('Novo usuário a ser criado:', newUser);
-
   
     this.EmployeeService.createUser(newUser).subscribe({
       next: (data: any) => {
@@ -146,7 +144,7 @@ export class EmployeesComponent {
   
   
   openCreateModal() {
-    this.newUser = { name: '', email: '', role: ''};
+    this.newUser = { name: '', email: '', role: '', password: ''};
     this.isCreateModalVisible = true;
   }
 
