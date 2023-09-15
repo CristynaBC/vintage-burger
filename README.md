@@ -1,27 +1,33 @@
-# VintageBurger
+<div align="center">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+# Vintage Burger 🍔
+</div>
 
-## Development server
+<div align="center">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   Acesse o projeto  [aqui](inserir-deploy).
+  <br>
+  Status do projeto: Em andamento🚧 <br>
+  Ferramentas e tecnologias utilizadas: <br>
 
-## Code scaffolding
+  [![My Skills](https://skillicons.dev/icons?i=angular,typescript,html,css,figma,vscode,git,github,&theme=light)](https://skillicons.dev)
+  <br>
+  </div> 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ---
 
-## Build
+  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Índice
+- [1. Resumo do projeto](#1-resumo-do-projeto)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
+### 1. Resumo do projeto
 
-## Running end-to-end tests
+Vintage Burger é uma hamburgeria inspirada no estilo dos restaurantes vintage dos anos 50. Mas apenas o estilo remete ao passado, pois, pensando em uma melhor experiência para seus colaboradores e almejando uma maior agilidade no atendimento ao cliente, foi criada uma interface moderna utilizando Angular CLI para melhor gerir o funcionamento da hamburgeria.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Existem três cargos dentro da hamburgueria: **administrador, chef de cozinha e garçom**. A interface foi desenvolvida com Angular CLI, pensando na melhor experiência possível de cada um dos três usuários. Os objetivos de cada um eram:
 
-## Further help
+<!-- ### 2. Histórias de usuários -->
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
