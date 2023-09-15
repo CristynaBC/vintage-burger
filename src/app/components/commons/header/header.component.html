@@ -58,7 +58,8 @@
         <button mat-menu-item routerLink="/cardapio" *ngIf="role === 'garçom'">Novo pedido</button>
         <button mat-menu-item routerLink="/pedidos-prontos" *ngIf="role === 'garçom' || role === 'chef'">Pedidos prontos</button>
         <button mat-menu-item routerLink="/em-andamento" *ngIf="role === 'garçom' || role === 'chef'">Pedidos em andamento</button>
-        <button mat-menu-item  *ngIf="role === 'admin'">Colaboradores</button>
-        <button mat-menu-item  *ngIf="role === 'admin'">Cardápio</button>
+        <button mat-menu-item routerLink="/colaboradores" *ngIf="role === 'admin'">Colaboradores</button>
+        <button mat-menu-item routerLink="/produtos" *ngIf="role === 'admin'">Cardápio</button>
+        <button mat-menu-item routerLink="">Sair</button>
       </mat-menu>     
 </header>

@@ -1,29 +1,21 @@
-main {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-}
+
 
 .orders-container {
   display: flex;
-  width: 100vw;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .order-container {
-  margin: 50px;  
+  margin: 20px;  
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #ffa696;
   width: 300px;
   height: fit-content;
-  padding: 20px 20px;
+  padding: 15px 20px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -61,8 +53,6 @@ main {
   margin: 0;
 }
 
-
-
 .order-item {
   background: #ff6347;
   display: flex;
@@ -71,8 +61,9 @@ main {
   align-items: center;
   color: white;
   width: 270px;
+  height: 26px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
