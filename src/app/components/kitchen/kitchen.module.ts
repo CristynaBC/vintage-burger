@@ -6,6 +6,7 @@ import { KitchenReadyComponent } from './kitchen-ready/kitchen-ready.component';
 import { KitchenRoutingModule } from './kitchen-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { LoginModule } from '../login/login.module';
 
 
 
@@ -18,7 +19,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
     CommonModule,
     KitchenRoutingModule,
     CommonsModule,
-    MatIconModule
+    MatIconModule,
+    LoginModule
   ]
 })
 export class KitchenModule {
