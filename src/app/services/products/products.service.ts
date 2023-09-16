@@ -7,7 +7,7 @@ import { AuthService } from '../auth/auth.service';
   providedIn: 'root'
 })
 export class ProductsService {
-  private apiUrl = 'http://localhost:8080/products';
+  private apiUrl = 'https://vintage-burger-api.vercel.app/products';
 
   constructor(private http: HttpClient, private authService: AuthService) { } //permite usar o HttpClient para fazer chamadas HTTP para a API.
 

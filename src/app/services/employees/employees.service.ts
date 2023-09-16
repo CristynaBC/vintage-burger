@@ -7,7 +7,7 @@ import { AuthService } from '../auth/auth.service';
   providedIn: 'root',
 })
 export class EmployeesService {
-  private apiUrl = 'http://localhost:8080/users';
+  private apiUrl = 'https://vintage-burger-api.vercel.app/users';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
   getUsers(): Observable<any[]> {
