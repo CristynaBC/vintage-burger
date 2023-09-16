@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AuthService {
-  private apiUrl = "http://localhost:8080/login" //aqui define a url da api
+  private apiUrl = "https://vintage-burger-api.vercel.app/login" //aqui define a url da api
   constructor(private http: HttpClient) { }       //esse constructor recebe uma injeção de dependência do serviço HttpClient do angular, que permite fazer http requests
 
   login(email: string, password: string): Observable<any> {  //primeiro método do serviço: login, faz uma solicitação de login para a API, passando os valores de email e password, para utilizar tem que chamar AuthService.login
