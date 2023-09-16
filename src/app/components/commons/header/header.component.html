@@ -3,9 +3,18 @@
     class="header-logo"
     src="../../../../assets/img/vb-header-logo.png"
     alt="logo vintage burger"
-    routerLink="/home"
   />
   <div class="icon-container">
+
+    <div class="icon-label">
+      <mat-icon id="icon-label" class="header-icon" routerLink="/home"
+        >home</mat-icon
+      >
+      <label for id="orders-waiting-icon" class="header-icon-label">
+        Home
+      </label>
+    </div>
+
     <div class="icon-label"  *ngIf="role === 'garçom'">
       <mat-icon id="new-order-icon" class="header-icon" routerLink="/cardapio"
         >note_add</mat-icon
@@ -34,17 +43,17 @@
     </div>
 
     <div class="icon-label" *ngIf="role === 'admin'">
-      <mat-icon id="people-icon" class="header-icon" 
+      <mat-icon id="people-icon" class="header-icon" routerLink="/colaboradores"
         >group</mat-icon
       >
       <label for id="people-icon" class="header-icon-label"> Colaboradores </label>
     </div>
 
     <div class="icon-label" *ngIf="role === 'admin'">
-      <mat-icon id="food-icon" class="header-icon" 
+      <mat-icon id="food-icon" class="header-icon" routerLink="/produtos"
         >fastfood</mat-icon
       >
-      <label for id="food-icon" class="header-icon-label"> Cardápio </label>
+      <label for id="food-icon" class="header-icon-label"> Produtos </label>
     </div>
 
     <div class="icon-label">
@@ -55,11 +64,12 @@
   </div>
       <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
       <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/home">Home</button>
         <button mat-menu-item routerLink="/cardapio" *ngIf="role === 'garçom'">Novo pedido</button>
         <button mat-menu-item routerLink="/pedidos-prontos" *ngIf="role === 'garçom' || role === 'chef'">Pedidos prontos</button>
         <button mat-menu-item routerLink="/em-andamento" *ngIf="role === 'garçom' || role === 'chef'">Pedidos em andamento</button>
         <button mat-menu-item routerLink="/colaboradores" *ngIf="role === 'admin'">Colaboradores</button>
-        <button mat-menu-item routerLink="/produtos" *ngIf="role === 'admin'">Cardápio</button>
+        <button mat-menu-item routerLink="/produtos" *ngIf="role === 'admin'">Produtos</button>
         <button mat-menu-item routerLink="">Sair</button>
       </mat-menu>     
 </header>
