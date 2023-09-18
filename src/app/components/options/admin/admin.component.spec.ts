@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-fdescribe('AdminComponent', () => {
+describe('AdminComponent', () => {
   let component: AdminComponent;
   let fixture: ComponentFixture<AdminComponent>;
   let fakeAuthService: AuthService;
