@@ -7,14 +7,14 @@
   .new-orders-container,
   .order-summary-container {
     flex: 1;
-    height: 86vh; /* Define a altura para ocupar 100% da altura da viewport */
+    height: 90vh; /* Define a altura para ocupar 100% da altura da viewport */
     overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura da seção */
 }
 
   /* Estilização da barra de rolagem */
 .new-orders-container::-webkit-scrollbar,
 .order-summary-container::-webkit-scrollbar {
-  width: 8px; /* Largura da barra de rolagem */
+  width: 4px; /* Largura da barra de rolagem */
 }
 
 .new-orders-container::-webkit-scrollbar-thumb,
@@ -45,4 +45,13 @@
   }
 }
 
+@media (max-width: 480px) {
+  .order-summary-container {
+    max-width: 55%;
+  
+}
+.new-orders-container, .order-summary-container {
+  height: 110vh;
+}
+}
   
