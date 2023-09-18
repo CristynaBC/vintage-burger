@@ -88,21 +88,18 @@ h2{
 }
 
 
-@media (min-width:860px) {
+@media (min-width: 800px) {
   .type-options {
     width: 60vw;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 720px) {
   .type-options {
     width: 50vw;
-   
   }
 
 }
-
-
 @media (max-width: 480px) {
   .product-card {
     width: 100px;
@@ -130,7 +127,7 @@ h2{
   }
   .type-options {
     margin-bottom: 10px;
-   
+    width: 40vw ;
   }
 
 }
