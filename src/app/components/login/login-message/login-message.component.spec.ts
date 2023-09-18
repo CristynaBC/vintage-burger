@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 
-fdescribe('LoginMessageComponent ', () => {
+describe('LoginMessageComponent ', () => {
   let component: LoginMessageComponent ;
   let fixture: ComponentFixture<LoginMessageComponent >;
   let fakeAuthService: AuthService;
