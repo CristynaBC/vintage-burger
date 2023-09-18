@@ -20,7 +20,8 @@
 
 ## Índice
 - [1. Resumo do projeto](#1-resumo-do-projeto)
-
+- [2. Histórias de Usuários](#1-resumo-do-projeto)
+- [3. Instruções de login](#1-resumo-do-projeto)
 
 ---
 ### 1. Resumo do projeto
@@ -29,5 +30,18 @@ Vintage Burger é uma hamburgeria inspirada no estilo dos restaurantes vintage d
 
 Existem três cargos dentro da hamburgueria: **administrador, chef de cozinha e garçom**. A interface foi desenvolvida com Angular CLI, pensando na melhor experiência possível de cada um dos três usuários. Os objetivos de cada um eram:
 
-<!-- ### 2. Histórias de usuários -->
+### 2. Histórias de usuários
+### 3. Instruções de login
+
+
+<div align="center">
+  Você pode acessar com as seguintes credenciais: <br>
+  
+| Cargo           | Email                  | Senha  |
+|-----------------|------------------------|--------|
+| Administrador   | claudia@vburger.com    | 123456 |
+| Chef de cozinha | joao@vburger.com       | 123456 |
+| Garçom          | Pedro@vburger.com      | 123456 |
+</div>
+
 
