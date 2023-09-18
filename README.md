@@ -44,10 +44,10 @@ Existem três cargos dentro da hamburgueria: **administrador, chef de cozinha e 
 
 ##### Critérios de aceitação
 
-[x] Usuário consegue acessar uma tela de login; <br>
-[x] Faz login com e-mail e senha; <br>
-[x] Recebe mensagens de erros compreensíveis caso não consiga logar; <br>
-[x] Entra no sistema de pedidos caso as credenciais forem corretas. <br>
+- [x] Usuário consegue acessar uma tela de login; 
+- [x] Faz login com e-mail e senha; 
+- [x] Recebe mensagens de erros compreensíveis caso não consiga logar; 
+- [x] Entra no sistema de pedidos caso as credenciais forem corretas. 
 
 ##### Definições de pronto
 
@@ -67,12 +67,12 @@ cozinha para serem preparados em ordem.*
 
 O que deve acontecer para satisfazer as necessidades do usuário?
 
-[x] Garçom;garçonete consegue anotar o nome do cliente;
-[x] Pode adicionar produtos aos pedidos;
-[x] Pode excluir produtos;
-[x] Pode ver resumo e o total da compra;
-[x] Pode enviar o pedido para a cozinha;
-[x] A aplicação funciona bem em um _tablet_.
+- [x] Garçom;garçonete consegue anotar o nome do cliente;
+- [x] Pode adicionar produtos aos pedidos;
+- [x] Pode excluir produtos;
+- [x] Pode ver resumo e o total da compra;
+- [x] Pode enviar o pedido para a cozinha;
+- [x] A aplicação funciona bem em um _tablet_.
 
 ##### Definição de pronto
 
@@ -93,9 +93,9 @@ está pronto para ser entregue ao cliente.*
 
 ##### Critérios de aceitação
 
-[x] O chef consegue ver os pedidos ordenados à medida em que são feitos;
-[x] Pode marcar os pedidos que foram preparados e estão prontos para serem servidos;
-[x] Pode ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado como concluído.
+- [x] O chef consegue ver os pedidos ordenados à medida em que são feitos;
+- [x] Pode marcar os pedidos que foram preparados e estão prontos para serem servidos;
+- [x] Pode ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado como concluído.
 
 ##### Definição de pronto
 
@@ -112,8 +112,8 @@ está pronto para ser entregue ao cliente.*
 
 ##### Critérios de aceitação
 
-[x] Garçom/garçonete consegue ver a lista de pedidos prontos para servir;
-[x] Pode marcar os pedidos que foram entregues.
+- [x] Garçom/garçonete consegue ver a lista de pedidos prontos para servir;
+- [x] Pode marcar os pedidos que foram entregues.
 
 ##### Definição de pronto
 
@@ -133,10 +133,10 @@ plataforma para manter atualizado as informações de meus funcionários.*
 
 ##### Critérios de aceitação
 
-[x] Administrador consegue ver lista de funcionários.
-[x] Pode adicionar funcionários.
-[x] Pode excluir funcionários.
-[x] Pode atualizar dados dos funcionários.
+- [x] Administrador consegue ver lista de funcionários.
+- [x] Pode adicionar funcionários.
+- [x] Pode excluir funcionários.
+- [x] Pode atualizar dados dos funcionários.
 
 ##### Definição de pronto
 
@@ -154,10 +154,10 @@ para manter atualizado o menu.*
 
 ##### Critérios de aceitação
 
-[x] Administrador consegue ver a lista de produtos.
-[x] Pode adicionar produtos.
-[x] Pode excluir produtos.
-[x] Pode atualizar dados de produtos.
+- [x] Administrador consegue ver a lista de produtos.
+- [x] Pode adicionar produtos.
+- [x] Pode excluir produtos.
+- [x] Pode atualizar dados de produtos.
 
 ##### Definição de pronto
 
