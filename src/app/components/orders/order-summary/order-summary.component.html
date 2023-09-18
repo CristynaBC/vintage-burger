@@ -9,16 +9,17 @@
   </select>
   </form>
   
-  
-  <div class="order-description"><h4>Item</h4><h4>Preço</h4><h4>Qtd</h4></div>
   <div class="items-container">
 
   <div *ngFor="let item of orderService.getCartItems(); let i = index" class="summary-item">
-    <div class="order-categories"><h4>{{ item.name }}</h4><h4>R$ {{ item.price }} </h4><h4>{{ item.quantity }}</h4>
-    <div class="btn-container">
-    <button (click)="orderService.increaseQuantity(i)"><mat-icon>add</mat-icon></button>
-    <button (click)="orderService.decreaseQuantity(i)"><mat-icon>remove</mat-icon></button>
-    <button (click)="removeItem(i)"><mat-icon>delete</mat-icon></button>
+    <div class="order-categories">
+      
+     <div class="item-info"> <h4 class="item-name">{{ item.name }}</h4><h4 class="item-price">R$ {{ item.price }} </h4><h4 class="item-qtd">x {{ item.quantity }}</h4>
+     </div>
+      <div class="btn-container">
+    <button (click)="orderService.increaseQuantity(i)" class="cart-button"><mat-icon>add</mat-icon></button>
+    <button (click)="orderService.decreaseQuantity(i)" class="cart-button"><mat-icon>remove</mat-icon></button>
+    <button (click)="removeItem(i)" class="cart-button"><mat-icon>delete</mat-icon></button>
     </div>
     </div>
   </div>

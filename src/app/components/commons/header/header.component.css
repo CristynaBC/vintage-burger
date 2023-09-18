@@ -20,7 +20,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 40px 30px 10px 10px;
 
 }
@@ -66,13 +66,13 @@ header {
   margin: 0px 30px;
 }
 
-@media (max-width: 605px){
+@media (max-width: 640px){
 .icon-container {
   display: none;
 }
 }
 
-@media (min-width:606px ) {
+@media (min-width:641px ) {
   .hamburger-menu {
     display: none;
   }
