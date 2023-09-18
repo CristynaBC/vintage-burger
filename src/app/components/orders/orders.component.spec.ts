@@ -7,7 +7,7 @@ import { Observable,of } from 'rxjs';
 import { Router } from '@angular/router';
 
 
-fdescribe('OrdersComponent', () => {
+describe('OrdersComponent', () => {
   let component: OrdersComponent;
   let fixture: ComponentFixture<OrdersComponent>;
   let fakeAuthService: AuthService;
