@@ -21,22 +21,22 @@
 ## Índice
 - [1. Resumo do projeto](#1-resumo-do-projeto)
 - [2. Histórias de Usuários](#2-histórias-de-usuários)
-- [3. Desenho de interface do usuário]()
+- [3. Desenhos de interface do usuário]()
 - [4. Instruções de login](#4-instruções-de-login)
-- [5. Organização do projeto]()
+- [5. Organização do projeto](#5-organização-do-projeto)
 - [6. Testes unitários]()
 - [7. Desenvolvedoras](#7-desenvolvedoras)
 
 ---
 ### 1. Resumo do projeto
-***
+---
 
 Vintage Burger é uma hamburgeria inspirada no estilo dos restaurantes vintage dos anos 50. Mas apenas o estilo remete ao passado, pois, pensando em uma melhor experiência para seus colaboradores e almejando uma maior agilidade no atendimento ao cliente, foi criada uma interface moderna utilizando Angular CLI para melhor gerir o funcionamento da hamburgeria.
 
 Existem três cargos dentro da hamburgueria: **administrador, chef de cozinha e garçom**. A interface foi desenvolvida com Angular CLI, pensando na melhor experiência possível de cada um dos três usuários. Os objetivos de cada um eram:
-
-### 2. Histórias de usuários
 ***
+### 2. Histórias de usuários
+---
 
 **Historia de usuario 1:**  Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais:
 
@@ -56,7 +56,7 @@ Existem três cargos dentro da hamburgueria: **administrador, chef de cozinha e 
 * Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
 * Você deu deploy de seu aplicativo e marcou sua versão (tag git). -->
 
-***
+---
 
 **História de usuário 2:** Garçom/Garçonete deve ser capaz de anotar o pedido do cliente
 
@@ -83,7 +83,7 @@ O que deve acontecer para satisfazer as necessidades do usuário?
 * Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
 * Você deu deploy de seu aplicativo e marcou sua versão (tag git). -->
 
-***
+---
 
 **História de usuário 3:** Chefe de cozinha deve ver os pedidos
 
@@ -104,7 +104,7 @@ está pronto para ser entregue ao cliente.*
 * Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
 * Você deu deploy de seu aplicativo e marcou sua versão (tag git). -->
 
-***
+---
 
 **Historia de usuário 4** Garçom/Garçonete deve ver os pedidos prontos para servir
 
@@ -124,7 +124,7 @@ está pronto para ser entregue ao cliente.*
 * Os dados devem ser mantidos intactos, mesmo depois que um pedido for
   finalizado. Tudo isso para poder ter estatísticas no futuro. -->
 
-***
+---
 
 **Historia de usuário 5** Administrador(a) de loja deve administrar seus funcionários
 
@@ -145,7 +145,7 @@ plataforma para manter atualizado as informações de meus funcionários.*
 * Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
 * Você deu deploy de seu aplicativo e marcou sua versão (tag git). -->
 
-***
+---
 
 **História de usuário 6** Administrador(a) de loja deve administrar os produtos
 
@@ -166,10 +166,10 @@ para manter atualizado o menu.*
 * Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
 * Você deu deploy de seu aplicativo e marcou sua versão (tag git). -->
 
-***
+---
 
 ### 4. Instruções de login
-
+---
   Você pode acessar com as seguintes credenciais: <br>
 
 <div align="center">
@@ -181,9 +181,16 @@ para manter atualizado o menu.*
 | Garçom          | pedro@vburger.com      | 123456 |
 </div>
 
-
-### 7. Desenvolvedoras
 ***
+### 5. Organização do projeto
+---
+A organização do projeto foi feita seguindo conceitos do método scrum, e utilizando a ferramenta GitHub Projects para administração das sprints:
+
+<div align="center">
+<img src="src/assets/img/githubprojects.PNG" width="1000em"/>
+</div>
+
+---
 Geane Ramos
 
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link)](https://github.com/geanemr) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link)](https://www.linkedin.com/in/geane-moraes-ramos/)
