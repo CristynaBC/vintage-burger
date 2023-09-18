@@ -21,7 +21,7 @@
 ## Índice
 - [1. Resumo do projeto](#1-resumo-do-projeto)
 - [2. Histórias de Usuários](#2-histórias-de-usuários)
-- [3. Desenhos de interface do usuário]()
+- [3. Desenhos de interface do usuário](#3-desenhos-de-interface-de-usuário)
 - [4. Instruções de login](#4-instruções-de-login)
 - [5. Organização do projeto](#5-organização-do-projeto)
 - [6. Testes unitários]()
@@ -166,7 +166,18 @@ para manter atualizado o menu.*
 * Você fez _testes_ de usabilidade e incorporou o _feedback_ do usuário.
 * Você deu deploy de seu aplicativo e marcou sua versão (tag git). -->
 
+***
+### 3. Desenhos de interface de usuário
 ---
+Os protótipos do projeto foram feitos em Figma. Você pode acessá-los aqui:
+
+- [Protótipo garçom](https://www.figma.com/proto/awhL0NTG7GXhDwJxegvw4A/Vintage-Burger?type=design&node-id=11-375&t=y9I1IXEpI3i0nPNe-1&scaling=scale-down&page-id=6%3A847&starting-point-node-id=11%3A375&mode=design).
+
+- [Protótipo chef](https://www.figma.com/proto/awhL0NTG7GXhDwJxegvw4A/Vintage-Burger?type=design&node-id=106-932&t=pYn42YANldLaxAY2-1&scaling=scale-down&page-id=3%3A2&starting-point-node-id=106%3A932&show-proto-sidebar=1&mode=design).
+
+- [Protótipo admin](https://www.figma.com/proto/awhL0NTG7GXhDwJxegvw4A/Vintage-Burger?type=design&node-id=106-1258&t=Sl11WG2duDFXlNsB-1&scaling=scale-down&page-id=106%3A1147&starting-point-node-id=106%3A1258&show-proto-sidebar=1&mode=design).
+
+Ao longo do desenvolvimento do projeto, após a realização de testes de usabilidade, foi optado por alterar a visualização de lista de produtos e colaboradores por parte do admin, deixando de ser em cards e passando a ser em tabelas.
 
 ### 4. Instruções de login
 ---
@@ -190,11 +201,13 @@ A organização do projeto foi feita seguindo conceitos do método scrum, e util
 <img src="src/assets/img/githubprojects.PNG" width="1000em"/>
 </div>
 
----
+***
+
+### 7. Desenvolvedoras
+Cristyna Costa
+
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link)](https://github.com/CristynaBC/) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link)](https://www.linkedin.com/in/cristyna-becker-costa/)
+
 Geane Ramos
 
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link)](https://github.com/geanemr) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link)](https://www.linkedin.com/in/geane-moraes-ramos/)
-
-Cristyna 
-
-[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link)](https://github.com/CristynaBC/) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link)](https://www.linkedin.com/in/cristyna-becker-costa/)
