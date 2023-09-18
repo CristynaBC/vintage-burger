@@ -120,7 +120,7 @@ h4 {
   border: none;
   width: 100px;
   padding: 10px;
-  margin: 5px;
+  margin-bottom: 30px;
   border-radius: 10px;
   background: #FFD700;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -203,12 +203,27 @@ h4 {
   }
 }
 
+@media screen and (max-width: 1023px) {
+  .items-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  
+}
+}
+
 @media screen and (max-width: 406px) {
   .order-categories {
     width: 160px;
     
    }
-
+  
+   .total {
+    font-size: 1rem;
+    padding: 5px;
+   }
+   .enviar-pedido {
+    font-size: 1rem;
+   }
 }
 
 @media screen and (max-width: 345px) {
