@@ -3,7 +3,6 @@ import { WaiterComponent } from './waiter.component';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('WaiterComponent', () => {
@@ -24,7 +23,6 @@ describe('WaiterComponent', () => {
     );
     await TestBed.configureTestingModule({
       declarations: [WaiterComponent],
-      imports:[FormsModule],
       schemas:[CUSTOM_ELEMENTS_SCHEMA],
       providers:[
         { provide: AuthService, useValue: fakeAuthService }, Router]

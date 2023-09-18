@@ -3,10 +3,9 @@ import { AdminComponent } from './admin.component';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-describe('AdminComponent', () => {
+fdescribe('AdminComponent', () => {
   let component: AdminComponent;
   let fixture: ComponentFixture<AdminComponent>;
   let fakeAuthService: AuthService;
@@ -24,7 +23,6 @@ describe('AdminComponent', () => {
     );
     await TestBed.configureTestingModule({
       declarations: [AdminComponent],
-      imports:[FormsModule],
       schemas:[CUSTOM_ELEMENTS_SCHEMA],
       providers:[
         { provide: AuthService, useValue: fakeAuthService }, Router]

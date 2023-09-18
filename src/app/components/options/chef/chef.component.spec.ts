@@ -1,14 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WaiterComponent } from '../waiter/waiter.component';
+import { ChefComponent } from './chef.component';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-describe('WaiterComponent', () => {
-  let component: WaiterComponent;
-  let fixture: ComponentFixture<WaiterComponent>;
+describe('ChefComponent', () => {
+  let component: ChefComponent;
+  let fixture: ComponentFixture<ChefComponent>;
   let fakeAuthService: AuthService;
 
   beforeEach(async () => {
@@ -23,13 +22,12 @@ describe('WaiterComponent', () => {
       }
     );
     await TestBed.configureTestingModule({
-      declarations: [WaiterComponent],
-      imports:[FormsModule],
+      declarations: [ChefComponent],
       schemas:[CUSTOM_ELEMENTS_SCHEMA],
       providers:[
         { provide: AuthService, useValue: fakeAuthService }, Router]
     });
-    fixture = TestBed.createComponent(WaiterComponent);
+    fixture = TestBed.createComponent(ChefComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
