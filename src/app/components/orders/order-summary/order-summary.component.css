@@ -177,7 +177,7 @@ h4 {
 
 @media screen and (max-width: 760px) {
   .order-categories {
-    width: 140px;
+    width: 185px;
     padding: 3px;
    }
 
@@ -201,4 +201,20 @@ h4 {
   .cart-button {
     transform: scale(0.7);
   }
+}
+
+@media screen and (max-width: 406px) {
+  .order-categories {
+    width: 160px;
+    
+   }
+
+}
+
+@media screen and (max-width: 345px) {
+  .order-categories {
+    width: 140px;
+    
+   }
+
 }
