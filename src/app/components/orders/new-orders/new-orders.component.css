@@ -7,6 +7,7 @@ h2{
 .type-options {
   text-align: center;
   margin: 3%;
+  width: 40vw;
 }
 /* Estilo base para todos os botões */
 .product-button {
@@ -86,6 +87,22 @@ h2{
   justify-content: center;
 }
 
+
+@media (min-width:860px) {
+  .type-options {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .type-options {
+    width: 50vw;
+   
+  }
+
+}
+
+
 @media (max-width: 480px) {
   .product-card {
     width: 100px;
@@ -113,5 +130,8 @@ h2{
   }
   .type-options {
     margin-bottom: 10px;
+   
   }
+
 }
+
