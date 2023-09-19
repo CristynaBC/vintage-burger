@@ -77,3 +77,11 @@ header {
     display: none;
   }
 }
+
+@media (max-width:380px ) {
+  .header-logo {
+    width: 200px;
+    height: auto;
+    margin-left: 5px;
+}
+}

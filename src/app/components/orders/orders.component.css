@@ -54,7 +54,7 @@
   
 }
 .new-orders-container, .order-summary-container {
-  height: 110vh;
+  height: 100%;
 }
 }
   
