@@ -53,12 +53,14 @@ header {
 .icon-label:hover .header-icon {
   transform: scale(1.4);
   cursor: pointer;
+  
 }
 
 .icon-label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 25px;
 }
 
 .hamburger-menu {

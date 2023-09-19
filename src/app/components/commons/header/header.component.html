@@ -1,75 +1,68 @@
 <header>
-  <img
-    class="header-logo"
-    src="../../../../assets/img/vb-header-logo.png"
-    alt="logo vintage burger"
-  />
+  <img class="header-logo" src="../../../../assets/img/vb-header-logo.png" alt="logo vintage burger" />
   <div class="icon-container">
-
     <div class="icon-label">
-      <mat-icon id="icon-label" class="header-icon" routerLink="/home"
-        >home</mat-icon
-      >
+      <mat-icon id="icon-label" class="header-icon" routerLink="/home">home</mat-icon>
       <label for id="orders-waiting-icon" class="header-icon-label">
         Home
       </label>
     </div>
 
-    <div class="icon-label"  *ngIf="role === 'garçom'">
-      <mat-icon id="new-order-icon" class="header-icon" routerLink="/cardapio"
-        >note_add</mat-icon
-      >
+    <div class="icon-label" *ngIf="role === 'garçom'">
+      <mat-icon id="new-order-icon" class="header-icon" routerLink="/cardapio">note_add</mat-icon>
       <label for id="new-order-icon" class="header-icon-label">
         Novo pedido
       </label>
     </div>
 
-    <div class="icon-label"  *ngIf="role !== 'admin'">
-      <mat-icon id="orders-ready-icon" class="header-icon" routerLink="/pedidos-prontos"
-        >check_circle</mat-icon
-      >
-      <label for id="orders-ready-icon" class="header-icon-label" 
-        >Pedidos prontos
+    <div class="icon-label" *ngIf="role !== 'admin'">
+      <mat-icon id="orders-ready-icon" class="header-icon" routerLink="/pedidos-prontos">check_circle</mat-icon>
+      <label for id="orders-ready-icon" class="header-icon-label">Pedidos prontos
       </label>
     </div>
 
     <div class="icon-label" *ngIf="role !== 'admin'">
-      <mat-icon id="orders-waiting-icon" class="header-icon" routerLink="/em-andamento"
-        >watch_later</mat-icon
-      >
+      <mat-icon id="orders-waiting-icon" class="header-icon" routerLink="/em-andamento">watch_later</mat-icon>
       <label for id="orders-waiting-icon" class="header-icon-label">
         Em andamento
       </label>
     </div>
 
     <div class="icon-label" *ngIf="role === 'admin'">
-      <mat-icon id="people-icon" class="header-icon" routerLink="/colaboradores"
-        >group</mat-icon
-      >
-      <label for id="people-icon" class="header-icon-label"> Colaboradores </label>
+      <mat-icon id="people-icon" class="header-icon" routerLink="/colaboradores">group</mat-icon>
+      <label for id="people-icon" class="header-icon-label">
+        Colaboradores
+      </label>
     </div>
 
     <div class="icon-label" *ngIf="role === 'admin'">
-      <mat-icon id="food-icon" class="header-icon" routerLink="/produtos"
-        >fastfood</mat-icon
-      >
+      <mat-icon id="food-icon" class="header-icon" routerLink="/produtos">fastfood</mat-icon>
       <label for id="food-icon" class="header-icon-label"> Produtos </label>
     </div>
 
     <div class="icon-label">
-      <mat-icon id="exit-icon" class="header-icon"  (click)="logout()" routerLink="">exit_to_app</mat-icon>
+      <mat-icon id="exit-icon" class="header-icon" (click)="logout()" routerLink="">exit_to_app</mat-icon>
       <label for id="exit-icon" class="header-icon-label"> Sair </label>
     </div>
-
   </div>
-      <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/home">Home</button>
-        <button mat-menu-item routerLink="/cardapio" *ngIf="role === 'garçom'">Novo pedido</button>
-        <button mat-menu-item routerLink="/pedidos-prontos" *ngIf="role === 'garçom' || role === 'chef'">Pedidos prontos</button>
-        <button mat-menu-item routerLink="/em-andamento" *ngIf="role === 'garçom' || role === 'chef'">Pedidos em andamento</button>
-        <button mat-menu-item routerLink="/colaboradores" *ngIf="role === 'admin'">Colaboradores</button>
-        <button mat-menu-item routerLink="/produtos" *ngIf="role === 'admin'">Produtos</button>
-        <button mat-menu-item routerLink="">Sair</button>
-      </mat-menu>     
+  <mat-icon mat-button [matMenuTriggerFor]="menu" class="hamburger-menu header-icon">menu</mat-icon>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/home">Home</button>
+    <button mat-menu-item routerLink="/cardapio" *ngIf="role === 'garçom'">
+      Novo pedido
+    </button>
+    <button mat-menu-item routerLink="/pedidos-prontos" *ngIf="role === 'garçom' || role === 'chef'">
+      Pedidos prontos
+    </button>
+    <button mat-menu-item routerLink="/em-andamento" *ngIf="role === 'garçom' || role === 'chef'">
+      Pedidos em andamento
+    </button>
+    <button mat-menu-item routerLink="/colaboradores" *ngIf="role === 'admin'">
+      Colaboradores
+    </button>
+    <button mat-menu-item routerLink="/produtos" *ngIf="role === 'admin'">
+      Produtos
+    </button>
+    <button mat-menu-item routerLink="">Sair</button>
+  </mat-menu>
 </header>
