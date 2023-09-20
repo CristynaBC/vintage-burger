@@ -35,7 +35,7 @@ Existem três cargos dentro da hamburgueria: **administrador, chef de cozinha e 
 ***
 ## 2. Histórias de usuários
 
-- [x] **História de usuário 1:** Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais. *"Eu, como garçom/garçonete quero entrar no sistema de pedidos."*
+- [x] **História de usuário 1:** Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais: *"Eu, como garçom/garçonete quero entrar no sistema de pedidos."*
 
 - [x] **História de usuário 2:** Garçom/Garçonete deve ser capaz de anotar o pedido do cliente: <br>
 *"Eu como garçom/garçonete quero poder anotar o pedido de um cliente para não depender da minha memória, saber quanto cobrar e poder enviar os pedidos para a cozinha para serem preparados em ordem."*
