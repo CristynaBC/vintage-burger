@@ -35,23 +35,23 @@ Existem três cargos dentro da hamburgueria: **administrador, chef de cozinha e 
 ***
 ## 2. Histórias de usuários
 
-- [x] **História de usuário 1:** Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais:<br>
- *"Eu, como garçom/garçonete, quero entrar no sistema de pedidos."*
+- **História de usuário 1:** Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais:<br>
+- [x]  *"Eu, como garçom/garçonete, quero entrar no sistema de pedidos."*
 
-- [x] **História de usuário 2:** Garçom/Garçonete deve ser capaz de anotar o pedido do cliente: <br>
-*"Eu, como garçom/garçonete, quero poder anotar o pedido de um cliente para não depender da minha memória, saber quanto cobrar e poder enviar os pedidos para a cozinha para serem preparados em ordem."*
+- **História de usuário 2:** Garçom/Garçonete deve ser capaz de anotar o pedido do cliente: <br>
+- [x] *"Eu, como garçom/garçonete, quero poder anotar o pedido de um cliente para não depender da minha memória, saber quanto cobrar e poder enviar os pedidos para a cozinha para serem preparados em ordem."*
 
-- [x] **História de usuário 3:** Chefe de cozinha deve ver os pedidos:<br>
-*"Eu, como chefe de cozinha, quero ver os pedidos dos clientes em ordem, poder marcar os pedidos que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente."*
+- **História de usuário 3:** Chefe de cozinha deve ver os pedidos:<br>
+- [x] *"Eu, como chefe de cozinha, quero ver os pedidos dos clientes em ordem, poder marcar os pedidos que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente."*
 
-- [x] **História de usuário 4:** Garçom/Garçonete deve ver os pedidos prontos para servir: <br>
-*"Eu, como garçom/garçonete, quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes."*
+- **História de usuário 4:** Garçom/Garçonete deve ver os pedidos prontos para servir: <br>
+- [x] *"Eu, como garçom/garçonete, quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes."*
 
-- [x] **História de usuário 5:** Administrador(a) de loja deve administrar seus funcionários: <br>
-*"Eu, como administrador(a) de loja, quero gerenciar os usuários da plataforma para manter atualizado as informações de meus funcionários."*
+- **História de usuário 5:** Administrador(a) de loja deve administrar seus funcionários: <br>
+- [x] *"Eu, como administrador(a) de loja, quero gerenciar os usuários da plataforma para manter atualizado as informações de meus funcionários."*
 
-- [x] **História de usuário 6:** Administrador(a) de loja deve administrar os produtos: <br>
-*"Eu, como administrador(a) de loja, quero gerenciar os produtos para manter atualizado o menu."*
+- **História de usuário 6:** Administrador(a) de loja deve administrar os produtos: <br>
+- [x] *"Eu, como administrador(a) de loja, quero gerenciar os produtos para manter atualizado o menu."*
 
 ***
 ## 3. Desenhos de interface de usuário

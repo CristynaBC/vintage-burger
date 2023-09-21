@@ -7,7 +7,7 @@ import { Observable,of } from 'rxjs';
 import { Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 
-describe('HeaderComponent', () => {
+fdescribe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let fakeAuthService: AuthService;
@@ -16,11 +16,8 @@ describe('HeaderComponent', () => {
     fakeAuthService = jasmine.createSpyObj<AuthService>(
       'AuthService',
       {
-        login:  of (Observable<any>),
-        getToken: "test",
-        isLoggedIn: true,
-        getRole: "test",
-        
+        getRole: 'admin',
+        logout: undefined,
       }
     );
     TestBed.configureTestingModule({
@@ -35,7 +32,16 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize role with the value from AuthService', () => {
+    expect(component.role).toEqual('admin');
+  });
+
+  it('logout method should call AuthService.logout', () => {
+    component.logout();
+    expect(fakeAuthService.logout).toHaveBeenCalled();
   });
 });
