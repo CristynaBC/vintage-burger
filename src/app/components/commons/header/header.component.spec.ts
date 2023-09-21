@@ -7,7 +7,7 @@ import { Observable,of } from 'rxjs';
 import { Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 
-fdescribe('HeaderComponent', () => {
+describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let fakeAuthService: AuthService;
