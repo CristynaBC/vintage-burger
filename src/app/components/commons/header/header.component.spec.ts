@@ -3,7 +3,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HeaderComponent } from './header.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { Observable,of } from 'rxjs';
 import { Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 
@@ -36,12 +35,16 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  describe('getRole', () => {
   it('should initialize role with the value from AuthService', () => {
     expect(component.role).toEqual('admin');
   });
 
+  describe('logout', () => {
   it('logout method should call AuthService.logout', () => {
     component.logout();
     expect(fakeAuthService.logout).toHaveBeenCalled();
   });
+})
+})
 });

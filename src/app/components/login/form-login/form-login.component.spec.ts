@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Router, Routes } from '@angular/router';
 import { OptionsModule } from '../../options/options.module';
 
-fdescribe('FormLoginComponent', () => {
+describe('FormLoginComponent', () => {
   let component: FormLoginComponent;
   let fixture: ComponentFixture<FormLoginComponent>;
   let fakeAuthService: jasmine.SpyObj<AuthService>;
