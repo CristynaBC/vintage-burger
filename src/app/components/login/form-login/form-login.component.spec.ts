@@ -42,6 +42,7 @@ describe('FormLoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  describe('login', () => {
   it('should handle successful login', fakeAsync(() => {
     const routerSpy = spyOn(router,'navigate')
     component.email = 'test@example.com';
@@ -84,4 +85,5 @@ describe('FormLoginComponent', () => {
     expect(component.loginError).toBeTrue();
     expect(component.errorMessage).toBe('Credenciais inválidas. Verifique seu e-mail e senha.');
   }));
+});
 });
