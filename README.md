@@ -7,7 +7,7 @@
 
    Acesse o projeto  [aqui](https://vintage-burger.vercel.app/).
   <br>
-  Status do projeto: Em andamento🚧 <br>
+  Status do projeto: Finalizado <br>
   Ferramentas e tecnologias utilizadas: <br>
 
   [![My Skills](https://skillicons.dev/icons?i=angular,typescript,html,css,figma,vscode,git,github,&theme=light)](https://skillicons.dev)
